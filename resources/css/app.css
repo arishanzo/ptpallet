@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "Font Awesome 5 Free";
+  src: url("/fonts/fa-solid-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; /* fallback immediately, swap in when ready */
+}
+
+
+@font-face {
   font-family: 'SlickFont';
   src: url('/node_modules/slick-carousel/slick/fonts/slick.woff') format('woff');
   font-weight: normal;

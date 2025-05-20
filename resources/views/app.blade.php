@@ -15,7 +15,7 @@
 
   
 </head>
-<body>
+<body class="scroll-smooth">
 <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="app"></div>
     <div class="progress-wrap bg-white">

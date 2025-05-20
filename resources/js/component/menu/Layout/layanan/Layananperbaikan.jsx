@@ -11,8 +11,11 @@ const Layananperbaikan = () => {
             <section className="mx-auto bg-gray-100  text-gray-600 body-font  dark:bg-gray-800 md:pt-12 md:pb-32 ">
   
   
-  <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+  <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center relative">
     
+  <div class="absolute top-5 -left-10  w-[100px] h-[200px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-purple-600 via-blue-500 to-teal-400 opacity-10 rounded-full blur-3xl"></div>
+   <div class="absolute top-10 right-0 w-[200px] h-[100px] md:w-[500px] md:h-[500px] bg-gradient-to-tr from-indigo-500 via-fuchsia-500 to-pink-500 opacity-10 rounded-full blur-3xl"></div>
+
       <div
           className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
         <a href="https://wa.me/628816982294?text=Halo%20saya%20ingin%20Maintance/redesign%20Website" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
@@ -22,7 +25,7 @@ const Layananperbaikan = () => {
       <h1 className="mb-8 text-2xl md:text-4xl  text-gray-900 font-bold leading-normal tracking-tight dark:text-white md:max-w-2xl sm:text-2xl">Layanan Profesional Perbaikan & Pemeliharaan Website untuk Kinerja Optimal</h1>
       <p className="mb-4 px-5 font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 max-w-[800px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl">Apakah website Anda mengalami masalah teknis, lambat, atau membutuhkan pembaruan? Kami menyediakan layanan perbaikan dan pemeliharaan website profesional yang dirancang untuk menjaga performa, keamanan, dan daya tarik website Anda.</p>
      
-      <details className="mb-12 group md:max-w-[650px] border rounded p-8">
+      <details className="mb-12 group md:max-w-[650px] border dark:border-gray-800 rounded p-8  bg-white dark:bg-gray-900 shadow shadow-xl">
         <summary className="flex items-center justify-between cursor-pointer">
             <h5 className="text-lg font-medium text-gray-900 dark:text-gray-400">
            Lihat Layanan Kami Meliputi Untuk Perbaikan & Pemeliharan:

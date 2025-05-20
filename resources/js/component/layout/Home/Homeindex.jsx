@@ -1,10 +1,9 @@
 
 import React from 'react';
-
-import HeroSection from './Herosection';
+import HeroSection from './herosection';
 import Price from './Price';
 import Profil from './Profil';
-import Keunggulan from './keunggulan';
+import Keunggulan from './Keunggulan';
 import Faq from './Faq';
 import Layanan from './layanan';
 

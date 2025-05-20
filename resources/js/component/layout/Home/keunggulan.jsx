@@ -1,5 +1,4 @@
 import React from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 const Keunggulan = () => {
@@ -14,7 +13,7 @@ const Keunggulan = () => {
     
         <div className="text-center mt-32 ">
     <h2 className="text-2xl md:text-4xl font-bold text-center dark:text-gray-300">Yang Membedakan Dengan Website Lain</h2>
-    <p className="pt-6 pb-8 text-base max-w-md pb-16 md:max-w-2xl text-center m-auto dark:text-gray-500">
+    <p className="pt-6 pb-8 text-base max-w-md pb-16 md:max-w-2xl text-center m-auto dark:text-gray-500 ">
       Anda akan mendapatkan layanan jasa website dan didukung kami kapanpun   </p>
            </div>
 

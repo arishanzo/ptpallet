@@ -1,5 +1,7 @@
 import React from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import ScrollReveal from '../../../data/ScrollReveal';
+import Story from './Story';
 
 
 const Profil = () => {
@@ -8,28 +10,25 @@ const Profil = () => {
     {
       id: 1,
       category: '01',
-      date: { day: '25', month: 'May' },
       imageUrl:
         './img/project/p1.jpg',
-      title: "Dr. Abdullah Abdullah's Presidential Election Campaign",
+      title: "Aplikasi Manajemen Daftar Hadir Karyawan",
       link: '#',
     },
     {
       id: 2,
       category: '02',
-      date: { day: '10', month: 'Mar' },
       imageUrl:
         './img/project/p2.jpg',
-      title: "Afghanistan's President Ashraf Ghani Speaks At The Council",
+      title: "Aplikasi Go Sewa Mobil",
       link: '#',
     },
     {
       id: 3,
       category: '03',
-      date: { day: '20', month: 'Jan' },
       imageUrl:
         './img/project/p3.jpg',
-      title: 'Middle East Participants Gather In Warsaw',
+      title: 'Aplikasi Manajemen Siswa',
       link: '#',
     },
   ];
@@ -37,11 +36,11 @@ const Profil = () => {
     return (
 
         <>
-        
+            <ScrollReveal direction="right" delay={800}>
     <section className=" dark:bg-gray-900 md:pt-32 pt-16 pb-16 md:pb-32    " id='about'>
    
       
-    <div className="mx-auto grid max-auto  md:max-w-[1700px]  md:px-16  sm:grid-cols-12  md:grid-cols-12 ">
+    <div className="mx-auto grid max-auto  md:max-w-[1700px]  md:px-16  sm:grid-cols-12 md:pb-20 md:grid-cols-12 ">
 
       
 
@@ -61,10 +60,10 @@ const Profil = () => {
       <a href="https://wa.me/6288805317354?text=Halo%20saya%20ingin%20buat%20Website" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
             <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">Profil</span> <span className="text-sm font-medium">Lebih Dekat Dengan Kami</span> 
             </a>
-        <h5 className="mb-4 md:mb-8 text-2xl md:text-5xl font-bold leading-normal tracking-tight dark:text-white md:max-w-2xl sm:text-2xl xl:text-6xl">Profil <span className='text-purple-800 font-extrabold  dark:text-purple-500 '>Perusahaan Kami</span> </h5>
-        <p className="p-4 font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 md:max-w-[650px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl">DevKlit adalah penyedia layanan pembuatan website profesional yang berkomitmen untuk membantu bisnis dan individu mengembangkan kehadiran digital yang kuat dan efektif. Dengan tim ahli yang berpengalaman dalam desain, pengembangan, dan teknologi terkini, kami menawarkan solusi website yang tidak hanya menarik secara visual tetapi juga fungsional dan sesuai kebutuhan pelanggan.</p>
+        <h5 className="mb-4 md:mb-8 text-2xl md:text-5xl font-bold leading-normal tracking-tight dark:text-white md:max-w-2xl sm:text-2xl xl:text-5xl">Profil <span className='text-purple-800 font-extrabold  dark:text-purple-500 '>Perusahaan Kami</span> </h5>
+        <p className="p-2 font-sans mb-8 sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 md:max-w-[650px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl text-justify">DevKlit adalah penyedia layanan pembuatan website profesional yang berkomitmen untuk membantu bisnis dan individu mengembangkan kehadiran digital yang kuat dan efektif. Dengan tim ahli yang berpengalaman dalam desain, pengembangan, dan teknologi terkini, kami menawarkan solusi website yang tidak hanya menarik secara visual tetapi juga fungsional dan sesuai kebutuhan pelanggan.</p>
       
-   <span class="p-4 font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 md:max-w-[650px] md:mb-12 md:text-sm  lg:mb-5 lg:text-sm">Perusahaan Kami Telah Membantu Sebanyak:</span>
+   <span class="font-bold font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 md:max-w-[650px] md:mb-12 md:text-sm  lg:mb-5 lg:text-sm">Perusahaan Kami Telah Membantu Sebanyak:</span>
         <div class="grid grid-cols-1 gap-8 mt-4 lg:grid-cols-2 xl:grid-cols-3">
    <div class="flex items-center shadow justify-between p-4 bg-white rounded-md">
 
@@ -132,10 +131,11 @@ const Profil = () => {
 
    </div>
    
+    <Story />           
 
     <div className="max-w-screen-xl md:max-w-[1700px] pt-4  mx-auto p-5 sm:p-10   ">
 
-    <div class="border-b mb-5 flex justify-between text-sm ">
+    <div class="border-b  p-8 flex justify-between text-sm ">
         <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
             
             <a href="#" class="font-semibold inline-block">Project</a>
@@ -144,15 +144,15 @@ const Profil = () => {
     </div>
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:pt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-2">
         {posts.map((post) => (
           <div
             key={post.id}
-            className="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center"
+            className="relative h-64 w-full flex items-end justify-start text-left bg-contain transform md:hover:scale-110 transition-all duration-300"
             style={{ backgroundImage: `url(${post.imageUrl})` }}
           >
             {/* gradient overlay */}
-            <div className="absolute inset-0 mt-32 bg-gradient-to-b from-transparent to-purple-500" />
+            <div className="absolute inset-0 mt-32 bg-gradient-to-b from-transparent to-purple-600" />
 
             {/* badge + date */}
             <div className="absolute top-0 left-0 right-0 mx-5 mt-2 flex justify-between items-center">
@@ -162,12 +162,7 @@ const Profil = () => {
               >
                 {post.category}
               </a>
-              <div className="text-white flex flex-col items-end">
-                <span className="text-3xl font-semibold leading-none">
-                  {post.date.day}
-                </span>
-                <span className="-mt-3">{post.date.month}</span>
-              </div>
+            
             </div>
 
             {/* title */}
@@ -183,10 +178,12 @@ const Profil = () => {
         ))}
       </div>
     </div>
-                        
+              
    
    
   </section>
+
+    </ScrollReveal>
     </>
     );
 }

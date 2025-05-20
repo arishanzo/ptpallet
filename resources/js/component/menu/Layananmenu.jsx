@@ -50,9 +50,14 @@ const Layananmenu = () => {
       ];
  
         return (
-            <section className="feature__section  dark:bg-gray-900 dark:text-white">
-            <div className="md:max-w-[1600px] px-7 lg:px-10 py-14 mx-auto">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
+            <section className="feature__section  dark:bg-gray-900 dark:text-white ">
+            <div className="md:max-w-[1600px] px-7 lg:px-10 py-14 mx-auto ">
+     
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 md:relative text-center">
+            <div class="absolute top-5 -left-10  w-[100px] h-[200px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-purple-600 via-blue-500 to-teal-400 opacity-20 rounded-full blur-3xl"></div>
+   <div class="absolute top-10 right-0 w-[200px] h-[100px] md:w-[500px] md:h-[500px] bg-gradient-to-tr from-indigo-500 via-fuchsia-500 to-pink-500 opacity-20 rounded-full blur-3xl"></div>
+
+
        <div className="border border-indigo-600 p-1 w-60 mx-auto rounded-full flex items-center justify-between mb-4">
            <span className="font-inter text-md font-medium  ml-3"
            >Tingkatkan bisnis Anda </span>
@@ -66,16 +71,16 @@ const Layananmenu = () => {
        </div>
        <h1
            className="max-w-2xl mx-auto text-center font-manrope font-bold text-2xl  mb-5 md:text-4xl ">
-           Jasa Pembuatan Website Modern, Responsif, dan SEO-Friendly untuk
+           Percayakan Website Modern, Responsif, dan SEO-Friendly untuk
            <span className="text-purple-800 pb-8"> Bisnis Anda</span>
        </h1>
        <p className="max-w-2xl md:max-w-4xl mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-8">
        Butuh website profesional yang menarik pelanggan dan meningkatkan penjualan? Kami menyediakan layanan pembuatan website modern, responsif, dan SEO-friendly untuk membantu bisnis Anda tampil lebih profesional di dunia digital. Dengan desain yang menarik dan teknologi terkini, website Anda akan lebih cepat, aman, dan mudah ditemukan di Google.     </p>
    </div>
-              <div className="w-full  lg:w-full shadow-purple-300 relative  isolate grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="w-full  lg:w-full shadow-purple-300  isolate grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {layananItems.map(item => (   
                 <div key={item.id}
-                  className="grid grid-rows-1 p-8 dark:bg-gray-800 dark:border-none rounded-xl gap-y-2 w-full border  hover:inset-shadow-indigo-500  transition-shadow duration-150 ease-linear cursor-pointer">
+                  className="grid grid-rows-1 p-8 dark:bg-gray-800  bg-white dark:bg-gray-800 shadow shadow-xl dark:border-none rounded-xl gap-y-2 w-full border  hover:inset-shadow-indigo-500  transition-shadow duration-150 ease-linear cursor-pointer  transform md:hover:scale-75">
                   <div className="flex flex-col gap-y-2.5">
                     <h3 className="text-xl dark:text-gray-300 font-bold">Layanan {item.judul}</h3>
                     <p className="text-xl font-semibold"></p>

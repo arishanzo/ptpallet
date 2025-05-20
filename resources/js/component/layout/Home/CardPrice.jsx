@@ -6,7 +6,8 @@ const CardPrice = () => {
   return (
   
     <div className="mx-auto grid max-auto justify-center  md:space-y-0 space-y-2  md:max-w-[1700px]  sm:grid-cols-12  md:grid-cols-9 " >
-        <div className="rounded-3xl col-span-3 dark:bg-gray-900 dark:shadow-2xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none">
+    
+     <div className="rounded-3xl col-span-3 dark:bg-gray-900 dark:shadow-2xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none transform md:hover:scale-110 transition-all duration-300">
         <h3 id="tier-hobby" className="pb-4 text-xl text-base/7 font-semibold text-indigo-600">Paket Basic</h3>
         <span className="text-base text-gray-400">Start From</span>
         <p className="mt-4 flex items-baseline gap-x-2">
@@ -18,7 +19,7 @@ const CardPrice = () => {
         <p className="mt-6 text-base/7 text-gray-600">Kami akan install template di Website Anda untuk bisa langsung dipakai secara cepat. Paket ini dirancang untuk individu atau bisnis kecil yang membutuhkan kehadiran online sederhana dan profesional. Cocok untuk portofolio pribadi, profil usaha kecil, atau blog.  Pengerjaan: 3 hari kerja.
 
 </p>
-        <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 sm:mt-10">
+        <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 sm:mt-10 ">
           <li className="flex gap-x-3">
             <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
               <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
@@ -76,7 +77,7 @@ const CardPrice = () => {
 
 
       
-      <div className="relative col-span-3 rounded-3xl bg-gray-800 p-8 shadow-3xl ring-1 ring-gray-900/10 sm:p-10">
+      <div className="col-span-3 rounded-3xl bg-gray-800 p-8  shadow-3xl ring-1 ring-gray-900/10 sm:p-10  transform md:hover:scale-110 transition-all duration-300">
         <h3 id="tier-enterprise" className="pb-4 text-base/7 font-semibold text-xl text-indigo-400">Paket Profesional</h3>
         <span className="text-base text-gray-400">Start From</span>
         <p className="mt-4 flex items-baseline gap-x-2">
@@ -145,7 +146,7 @@ const CardPrice = () => {
         <a href="https://wa.me/6288805317354?text=Halo%20saya%20ingin%20buat%20Website" aria-describedby="tier-enterprise" className="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Pilih Paket</a>
       </div>
 
-      <div className="rounded-3xl dark:bg-gray-900  dark:shadow-2xl col-span-3 rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none">
+      <div className="rounded-3xl dark:bg-gray-900  dark:shadow-2xl col-span-3 rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none transform md:hover:scale-110 transition-all duration-300">
         <h3 id="tier-hobby" className="pb-4 text-base/7 text-xl font-semibold text-indigo-600">Paket Custom</h3>
         <span className="text-base text-gray-400">Start From</span>
         <p className="mt-4 flex items-baseline gap-x-2">

@@ -1,53 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect }  from 'react';
 import { getDataTemplate } from '../../data/datatemplate';
 import Calltoaction from './Layout/layanan/Calltoaction';
 
 
 
 
-class Template extends React.Component {
+// class Template extends React.Component {
+  
+  const Template = () => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: getDataTemplate(),
-      option: 'Filter Category',
-      visibleCount: 8,
-    }
-  }
+  const [data, setData] = useState(getDataTemplate());
+  const [option, setOption] = useState('Filter Category');
+  const [visibleCount, setvisibleCount]= useState(8);
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     data: getDataTemplate(),
+  //     option: 'Filter Category',
+  //     visibleCount: 8,
+  //   }
+  // }
 
    // Fungsi untuk menangani input pencarian
-   handleSearch = (e) => {
-    const term = e.target.value.toLowerCase(); // Ambil input pengguna
+   const handleSearch = (e) => {
+    const term = e.target.value;// Ambil input pengguna
     
     // Update searchTerm di state
-    this.setState({ option: e.target.value });
     // Filter data berdasarkan kata kunci pencarian
-    const filteredData = getDataTemplate().filter((item) =>
-     term == 'Filter Category' || term == ''  || item.title.toLowerCase().includes(term) || item.category.toLowerCase().includes(term) // Cari nama yang sesuai
-    );
-
-    this.setState({ data: filteredData }); // Update hasil pencarian
+    setOption(term);
   };
 
+  const filterData = (term) => {
 
-  showMore = () => {
-    this.setState((prevState) => ({
-      visibleCount: prevState.visibleCount + 4, // Tambah jumlah yang terlihat
-    }));
+  const filteredData = getDataTemplate().filter((item) =>
+    term == 'Filter Category' || term == ''  || item.title.includes(term) || item.category.includes(term) // Cari nama yang sesuai
+   );
+   setData(filteredData);
   };
 
+  const showMore = (prevState) => {
+      const tambah = prevState.visibleCount + 4
+      setvisibleCount(); // Tambah jumlah yang terlihat
+    };
   
-  render(){
-    
 
-    const {data, option, visibleCount}  = this.state;
+    
+  useEffect(() => {
+    filterData(option);
+  }, [option]);
+
    
 
     // const { search, category } = this.state;
     // const filteredProducts = this.getFilteredProducts();
 return (
-        <div>
+      <div>
            <section className="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
   <div className="mx-auto md:max-w-screen-2xl px-4 2xl:px-0">
   
@@ -58,7 +66,7 @@ return (
       id="countries" 
       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       value={option}
-      onChange={this.handleSearch}
+      onChange={handleSearch}
       >
    
     <option disabled >Filter Category</option>
@@ -77,7 +85,7 @@ return (
               className="bg-transparent text-base font-normal  placeholder:text-gray-500 focus-within:outline-0"
               placeholder="Cari Template"
               
-          onChange={this.handleSearch}
+          onChange={handleSearch}
               
               />
                 </div>
@@ -87,7 +95,7 @@ return (
  
     <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
     {data.slice(0, visibleCount).map((item, index) => (  
-      <div key={item.id} className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+      <div key={item.id} className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 shadow shadow-xl">
         <div className=" w-full">
           <a href="#">
             <img className="mx-auto h-full " src={item.Image} alt="" />
@@ -149,7 +157,7 @@ return (
     </div>
     {visibleCount < data.length && (
     <div className="w-full text-center">
-      <button type="button" onClick={this.showMore} className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Show more</button>
+      <button type="button" onClick={showMore} className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Show more</button>
     </div>
     )}
   </div>
@@ -159,7 +167,6 @@ return (
 <Calltoaction/>
         </div>
   );
-}
-}
+};
 
 export default Template;

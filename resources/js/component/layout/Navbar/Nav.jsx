@@ -54,16 +54,12 @@ const Nav = () => {
 
     return(
 <Router>
-<nav className='p-2 md:p-10 bg-white  dark:bg-gray-900 show sticky top-0 z-50 w-full'>
+<nav className='p-2 md:p-10 bg-white  dark:bg-gray-900 show sticky top-0 z-50 w-full '>
     <div className={scroll ?'mx-auto md:max-w-[1700px] transition-all duration-300 bg-white dark:bg-gray-900 dark:text-white flex items-center justify-between px-6 py-4' : 'transition-all duration-300 mx-auto md:max-w-[1700px] bg-white dark:bg-gray-900 dark:text-white  shadow-purple-300 md:shadow-purple-300 dark:bg-dark-500  shadow-md mt-8  dark:text-white    md:max-w-full justify-between items-center dark:shadow-xl md:shadow-2xl flex items-center rounded-full  p-4 md:p-8  text-black'}>
   
    <a href="/" class="md:pl-12 flex items-center space-x-3 rtl:space-x-reverse"> 
-         <span>
-                                    <img src="./img/logo/logo.png" alt="AI Logo"
-                                         class="md:w-16 w-10"/>
-                                </span>
-                                <h1 className='font-bold text-xl dark:text-blue-500 text-blue-500 '>Dev<span className='text-purple-500 '>Klit</span></h1>
-                               </a>
+       <h1 className='font-bold md:text-4xl dark:text-blue-500 text-blue-500 '>Dev<span className='text-purple-500 '>Klit</span></h1>
+   </a>
   
   <div class="flex flex-wrap md:order-2 space-x-3 md:pe-12 hidden w-full md:flex md:w-auto md:order-1">
       <button onClick={()=> darkModeHandler()} class="relative flex h-11 w-full items-center justify-center p-6 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
@@ -83,7 +79,7 @@ const Nav = () => {
   
   </div>
 
-  <div class=" hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+  <div class=" hidden h-full left-0 w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
     <ul class="flex flex-col p-4  md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:border-gray-700">
      {navItems.map(item => (
           <li key={item.id}
@@ -107,7 +103,8 @@ const Nav = () => {
     </button>
   </div>
 
-  <div class="items-center fixed  justify-between w-full md:flex md:hidden md:order-1" id="navbar-sticky">
+{/* sticky menu popup */}
+  <div class="items-center fixed left-2 pt-2 right-2 shadow-xl  justify-between  md:flex md:hidden md:order-1" id="navbar-sticky">
     <ul class={ nav
             ? 'font-medium flex flex-col p-8 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'
             :  'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] '
@@ -116,9 +113,9 @@ const Nav = () => {
      {navItems.map(item => (
           <li
             key={item.id}
-            className=' py-2 pr-4 text-gray-900 rounded hover:bg-purple-800 md:hover:bg-transparent hover:text-white dark:text-white dark:hover:bg-purple-800 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-          >   <NavLink to={item.link} aria-current="page" className={({ isActive }) => (isActive ?  "block py-2 px-3 text-white rounded bg-purple-800 md:hover:bg-transparent hover:text-white dark:text-white dark:hover:bg-purple-800 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" : "block py-2 px-3 text-gray-900 rounded hover:bg-purple-800 md:hover:bg-transparent hover:text-white dark:text-white dark:hover:bg-purple-800 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700")}>
-          {item.text} </NavLink>
+            className=' py-2 pr-4 p-4 text-gray-900 rounded hover:bg-purple-800 md:hover:bg-transparent hover:text-white dark:text-white dark:hover:bg-purple-800 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+          >   <a href={item.link} aria-current="page" className={`${window.location.pathname === item.link  ?  'block py-2 px-3 text-white rounded bg-purple-800 md:hover:bg-transparent hover:text-white dark:text-white dark:hover:bg-purple-800 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700' : `block py-2 px-3 text-gray-900 rounded hover:bg-purple-800 md:hover:bg-transparent hover:text-white dark:text-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}`}>
+          {item.text} </a>
           </li>
         ))}
 

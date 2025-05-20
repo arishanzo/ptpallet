@@ -23,17 +23,17 @@ const Layanan = () => {
       <a href="/layanan" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
             <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">Layanan</span> <span className="text-sm font-medium">Mengenal Layanan Kami</span> 
             </a>
-            <h5 className=" text-2xl md:text-5xl font-bold leading-normal tracking-tight dark:text-white md:max-w-2xl sm:text-2xl xl:text-6xl">Layanan <span className='text-purple-800 font-extrabold  dark:text-purple-500 '>Website Kami</span> </h5>
+            <h5 className="text-2xl md:text-5xl font-bold leading-normal tracking-tight dark:text-white md:max-w-2xl sm:text-2xl xl:text-5xl">Layanan <span className='text-purple-800 font-extrabold  dark:text-purple-500 '>Website Kami</span> </h5>
             </div>
       <div className="content-center text-center sm:pl-16 md:p-8 md:justify-self-start sm:text-sm sm:text-start sm:col-span-4 md:col-span-6 md:text-start">
      
-        <h3 className="mb-4 p-8 font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-5 md:max-w-[650px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl">Kami menyediakan solusi lengkap untuk kebutuhan digital Anda melalui layanan pembuatan website yang profesional, inovatif, dan terfokus pada hasil. Berikut adalah deskripsi layanan yang kami tawarkan:</h3>
+        <h3 className="mb-4 p-8 font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-5 md:max-w-[650px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl text-justify">Kami menyediakan solusi lengkap untuk kebutuhan digital Anda melalui layanan pembuatan website yang profesional, inovatif, dan terfokus pada hasil. Berikut adalah deskripsi layanan yang kami tawarkan:</h3>
       </div>
     
       
     </div>
     
-    <div className="mx-auto max-auto  md:max-w-[1600px] p-8  ">
+    <div className="mx-auto max-auto  md:max-w-[1600px] p-8">
     <Carousel />
 
 </div>

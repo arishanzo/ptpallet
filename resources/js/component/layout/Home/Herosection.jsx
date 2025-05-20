@@ -1,49 +1,55 @@
 import React from 'react';
+import ScrollReveal from '../../../data/ScrollReveal';
 
 
 const HeroSection = () => {
-
     
-   
+    
     return (
 
+        
         <>
 
-<section className="mx-auto   text-gray-600 body-font  dark:bg-gray-900 md:pt-12 md:pb-20 ">
+<section className="mx-auto   text-gray-600 body-font  dark:bg-gray-900 md:pt-12 md:pb-20 overflow-x-hidden   overflow-y-hidden">
   
   
-    <div className="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center">
+              <ScrollReveal direction="right" delay={800}>
+    <div className="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center  md:px-16  sm:grid-cols-12 md:max-w-[1650px]   md:grid-cols-12">
       
         <div
-            className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            className="lg:flex-grow lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center block sm:col-span-7 justify-center md:col-span-6 text-center ">
+         
           <a href="/template" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
-            <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New Template</span> <span className="text-sm font-medium">Pilih Template</span> 
+            <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">Pilih Template</span> <span className="text-sm font-medium">Untuk Digital Anda.</span> 
             <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
         </a>
-        <h1 className="mb-8 text-4xl md:text-5xl  text-gray-900 font-bold tracking-tight dark:text-white md:max-w-xl sm:text-2xl xl:text-6xl">Jasa Pembuatan Website  <span className='text-purple-800 font-extrabold  dark:text-purple-500 '> Profesional dan SEO-Friendly</span></h1>
-        <p className="mb-4 px-4 font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 md:max-w-[650px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl">
+        <h1 className="mb-8 text-3xl md:text-5xl   text-gray-900 font-bold tracking-tight dark:text-white md:max-w-xl sm:text-2xl xl:text-5xl ">Percayakan Kebutuhan Digitalisasi <span className='text-purple-800 font-extrabold  dark:text-purple-500 '>Bisnis</span> Dan Strategi <span className='text-purple-800 font-extrabold  dark:text-purple-500 '> SEO</span> Anda Kepada Kami</h1>
+        
+       
+        <p className="mb-4 px-4 font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 md:max-w-[650px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl text-justify">
             Bangun website impian Anda dengan desain modern, responsif, dan sesuai kebutuhan bisnis Anda. Tingkatkan kehadiran online Anda bersama kami!
             Kami siap membantu Anda memiliki website yang profesional, cepat, dan SEO-friendly untuk meningkatkan brand dan penjualan Anda.
             </p>
        
-        <div className="flex p-4 justify-center md:justify-start">
-        <a  href="https://wa.me/6288805317354?text=Halo%20saya%20ingin%20buat%20Website" target="_blank" className="mr-5 inline-block rounded-xl bg-black px-8 py-4 text-center font-semibold text-white [box-shadow:rgb(19,_83,_254)_6px_6px] md:mr-6">Konsultasi</a>
+        <div className="flex justify-center md:justify-start">
+        <a  href="https://wa.me/6288805317354?text=Halo%20saya%20ingin%20buat%20Website" target="_blank" className="mr-5 inline-block rounded-xl bg-black px-8 py-4 text-center font-semibold text-white [box-shadow:rgb(19,_83,_254)_6px_6px] md:mr-6 md:text-sm text-xs">Konsultasi</a>
         <button onClick={() => {
     const section = document.getElementById('pembayaran');
     if (section) section.scrollIntoView({ behavior: 'smooth' });
   }}
         
         className="flex  max-w-full flex-row items-center justify-center rounded-xl border border-solid border-[#1353fe] px-6 py-3 font-semibold text-[#1353fe] [box-shadow:rgb(19,_83,_254)_6px_6px] dark:bg-white">
-            <p className="text-black">Cek Harga Website</p>
+            <p className="text-black md:text-sm text-xs">Cek Harga Website</p>
         </button>
         </div>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-2/2 w-5/6">    
-         
-        <img className="object-cover object-center rounded" alt="hero" src="./img/vektor.png" />
-        
-        </div>
-    </div>
+       
+
+        <div className='sm:col-span-7 justify-center md:col-span-6'>
+      <img className="object-cover object-center rounded" alt="hero" src="./img/depan.png" />
+      </div>
+      </div>
+      </ScrollReveal>
                                        </section>
 
 
@@ -119,5 +125,7 @@ const HeroSection = () => {
     </>
     );
 }
+
+
 
 export default HeroSection;
