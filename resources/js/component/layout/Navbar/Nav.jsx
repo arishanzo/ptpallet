@@ -21,9 +21,10 @@ const Nav = () => {
    const navItems = [
     { id: 1, text: 'Home', link: '/' },
     { id: 2, text: 'Layanan', link: '/layanan' },
-    { id: 3, text: 'Template Website', link: '/template' },
+    { id: 3, text: 'Template Website', link: '/template' }, 
+    { id: 4, text: 'AI Asisten', link: '/asistenai' },
+    { id: 5, text: 'Join Our Team', link: '/team' },
     
-    { id: 4, text: 'Join Our Team', link: '/team' },
    
   ];
   const [dark, setDark] = React.useState(false);
@@ -54,8 +55,8 @@ const Nav = () => {
 
     return(
 <Router>
-<nav className='p-2 md:p-10 bg-white  dark:bg-gray-900 show sticky top-0 z-50 w-full '>
-    <div className={scroll ?'mx-auto md:max-w-[1700px] transition-all duration-300 bg-white dark:bg-gray-900 dark:text-white flex items-center justify-between px-6 py-4' : 'transition-all duration-300 mx-auto md:max-w-[1700px] bg-white dark:bg-gray-900 dark:text-white  shadow-purple-300 md:shadow-purple-300 dark:bg-dark-500  shadow-md mt-8  dark:text-white    md:max-w-full justify-between items-center dark:shadow-xl md:shadow-2xl flex items-center rounded-full  p-4 md:p-8  text-black'}>
+<nav className='p-2 md:p-10 bg-white  dark:bg-gray-900  show sticky top-0 z-50 w-full '>
+    <div className={scroll ?'mx-auto md:max-w-[1700px] transition-all duration-300 bg-white dark:bg-gray-900 dark:text-white flex items-center justify-between px-6 py-4' : 'transition-all duration-300 mx-auto md:max-w-[1700px] bg-white dark:bg-gray-900 dark:text-white  shadow-purple-300 md:shadow-purple-300 dark:bg-dark-500  shadow-md mt-8  dark:text-white  justify-between items-center dark:shadow-xl md:shadow-2xl flex items-center rounded-full  p-4 md:p-8  text-black'}>
   
    <a href="/" class="md:pl-12 flex items-center space-x-3 rtl:space-x-reverse"> 
        <h1 className='font-bold md:text-4xl dark:text-blue-500 text-blue-500 '>Dev<span className='text-purple-500 '>Klit</span></h1>

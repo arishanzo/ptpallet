@@ -135,7 +135,7 @@ const Profil = () => {
 
     <div className="max-w-screen-xl md:max-w-[1700px] pt-4  mx-auto p-5 sm:p-10   ">
 
-    <div class="border-b  p-8 flex justify-between text-sm ">
+    <div class="border-b p-8 flex justify-between text-sm ">
         <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
             
             <a href="#" class="font-semibold inline-block">Project</a>
@@ -144,7 +144,7 @@ const Profil = () => {
     </div>
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-2">
+      <div className="grid grid-cols-1 md:pt-28 sm:grid-cols-2 md:grid-cols-3 gap-10 p-2">
         {posts.map((post) => (
           <div
             key={post.id}

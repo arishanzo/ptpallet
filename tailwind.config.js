@@ -51,6 +51,7 @@ export default {
        
       },
       keyframes: {
+        
         marquee: {
           '0%': {
               transform: 'translateX(0)'
