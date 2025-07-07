@@ -1,9 +1,24 @@
 import React from 'react';
 
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
+
 
 const Faq = () => {
 
-
+   const [ref, inView] = useInView({
+              triggerOnce: true, 
+              threshold: 0.1,    
+            });
+          
+            
+          
+          const styles = useSpring({
+            opacity: inView ? 1 : 0,
+              transform: inView ? 'translateY(0px)' : 'translateY(50px)', // ⬆️ Geser dari bawah
+              delay: inView ? 300 : 0,
+              config: { tension: 170, friction: 20 },
+          });
     
   const faqdata = [
     { id: 1, 
@@ -52,7 +67,8 @@ const Faq = () => {
    
     return (
 
-        <div className="py-4 shadow-2xl bg-purple-900  bg-center bg-cover dark:bg-gray-800">
+        <div className="py-4 shadow-2xl bg-purple-900  bg-center bg-cover dark:bg-purple-900">
+                <animated.div style={{ ...styles }}   ref={ref}>
         <div className="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
     
             <div className="text-center md:mt-32">
@@ -107,7 +123,7 @@ const Faq = () => {
     
         </div>
 
-        
+        </animated.div>
     </div>
      
     );

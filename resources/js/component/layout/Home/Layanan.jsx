@@ -1,15 +1,33 @@
 import React from 'react';
 import Carousel from './Carousel';
 
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
+
 
 const Layanan = () => {
   
 
-   
+     const [ref, inView] = useInView({
+        triggerOnce: true, 
+        threshold: 0.1,    
+      });
+    
+      
+    
+    const styles = useSpring({
+      opacity: inView ? 1 : 0,
+        transform: inView ? 'translateX(0px)' : 'translateX(100px)', // ⬆️ Geser dari bawah
+        delay: inView ? 300 : 0,
+        config: { tension: 170, friction: 20 },
+    });
+    
+
     return (
 
         <>
-    <section className="relative dark:relative-none bg-gray-100 dark:bg-gray-900  pt-16 md:pt-32 md:pb-32 " >
+             
+    <section className="relative dark:relative-none bg-gray-100 dark:bg-gray-900 md:p-16   pt-16 md:pt-32  overflow-x-hidden" >
     <div className="absolute inset-x-0 bottom-0 dark:hidden">
         <svg viewBox="0 0 224 12" fill="currentColor" className="w-full -mb-1 text-white" preserveAspectRatio="none">
             <path
@@ -17,6 +35,9 @@ const Layanan = () => {
             </path>
         </svg>
     </div>
+
+      <animated.div style={{ ...styles }}   ref={ref}>
+
     <div className="mx-auto grid max-auto   md:max-w-[1700px]  md:px-16  sm:grid-cols-12  md:grid-cols-12 ">
   
       <div className="content-center text-center sm:pl-16 md:p-8 md:justify-self-start sm:text-sm sm:text-start sm:col-span-12 md:col-span-6 md:text-start">
@@ -39,6 +60,7 @@ const Layanan = () => {
 </div>
     
     
+  </animated.div>
 
                         
    

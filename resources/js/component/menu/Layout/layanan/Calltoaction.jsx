@@ -1,14 +1,32 @@
 import React from 'react';
 
 
+
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
 const Calltoaction = () => {
 
  
+           const [ref, inView] = useInView({
+                   triggerOnce: true, 
+                   threshold: 0.1,    
+                 });
+               
+                 
+               
+               const styles = useSpring({
+                 opacity: inView ? 1 : 0,
+                   transform: inView ? 'translateX(0px)' : 'translateX(50px)', // ⬆️ Geser dari bawah
+                   delay: inView ? 300 : 0,
+                   config: { tension: 170, friction: 20 },
+               });
+     
         return (
        
             <>
-            <section className=" dark:bg-gray-900 bg-purple-800  pt-32 pb-32 ">
-   
+            <section className=" dark:bg-gray-900 bg-purple-800  pt-32 pb-32 overflow-x-hidden">
+    <animated.div style={{ ...styles }}   ref={ref}>
+     
             <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 ">
     <a href="https://wa.me/628816982294?text=Halo%20saya%20ingin%20buat%20Website" target="_blank" rel="noreferrer"
         className="border rounded-2xl py-1 px-4 text-white text-sm mb-5 ">Solusi Digital Terbaik untuk Bisnis Anda
@@ -25,6 +43,7 @@ const Calltoaction = () => {
     </a>
 </main>
            
+           </animated.div>
           </section>
           </>
       

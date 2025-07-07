@@ -1,15 +1,32 @@
 import React from 'react';
 
 
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
 const Layananperbaikan = () => {
 
+    
+          const [ref, inView] = useInView({
+                  triggerOnce: true, 
+                  threshold: 0.1,    
+                });
+              
+                
+              
+              const styles = useSpring({
+                opacity: inView ? 1 : 0,
+                  transform: inView ? 'translateY(0px)' : 'translateY(50px)', // ⬆️ Geser dari bawah
+                  delay: inView ? 300 : 0,
+                  config: { tension: 170, friction: 20 },
+              });
+    
  
         return (
        
 
 
             <section className="mx-auto bg-gray-100  text-gray-600 body-font  dark:bg-gray-800 md:pt-12 md:pb-32 ">
-  
+    <animated.div style={{ ...styles }}   ref={ref}>
   
   <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center relative">
     
@@ -80,7 +97,7 @@ const Layananperbaikan = () => {
 
                    
   </div>
-  
+  </animated.div>
                                      </section>
 
       

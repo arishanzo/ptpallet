@@ -1,14 +1,23 @@
 // src/ChatBox.js
-import React, { useEffect, useRef, useState } from 'react';
-import { IoSendSharp } from "react-icons/io5";
-import { IoArrowBack } from "react-icons/io5";
-import { RiChatAiFill } from "react-icons/ri";
+import { useEffect, useRef, useState } from 'react';
 import { getDataLayanan } from '../../../../data/dataLayanan';
 import { getDataPaketHarga } from '../../../../data/dataPaketHarga';
-import Markdown from 'react-markdown';
 
 
 const ChatAi = () => {
+
+  const text = 'Apa Yang Bisa Kami Bantu..';
+  const typingSpeed = 150; 
+  const deletingSpeed = 100;
+  const pauseDelay = 1500 ;
+  
+  const [displayText, setDisplayText] = useState('');
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+
+
+  // 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -17,17 +26,49 @@ const ChatAi = () => {
   const containerRef = useRef(null);
   const now = new Date();
 
+  const textareaRef = useRef(null);
 
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollTop = containerRef.current.scrollHeight;
-    }
-  }, [messages]);
+ useEffect(() => {
+
+    let timeoutId;
+    if (!isDeleting && index < text.length) {
+      // Typing mode, add next character
+      timeoutId = setTimeout(() => {
+        setDisplayText(text.substring(0, index + 1));
+        setIndex(index + 1);
+      }, typingSpeed);
+    } else if (isDeleting && index > 0) {
+      // Deleting mode, remove last character
+      timeoutId = setTimeout(() => {
+        setDisplayText(text.substring(0, index - 1));
+        setIndex(index - 1);
+      }, deletingSpeed);
+    } else if (!isDeleting && index === text.length) {
+      // Pause before deleting
+      timeoutId = setTimeout(() => {
+        setIsDeleting(true);
+      }, pauseDelay);
+    } else if (isDeleting && index === 0) {
+      // Pause before typing again
+      timeoutId = setTimeout(() => {
+        setIsDeleting(false);
+      }, pauseDelay);
+
+      return () => clearTimeout(timeoutId);
+    };
+
+     
+  // 
+  if (containerRef.current) {
+    containerRef.current.scrollTop = containerRef.current.scrollHeight;
+  }
+}, [messages, loading, index, isDeleting, text, typingSpeed, deletingSpeed, pauseDelay]);
+
 
 
   const timeAgo = (timestamp) => {
 
-        const diff = Math.floor((now - new Date(timestamp)) / 1000); // selisih detik
+        const diff = Math.floor((now - new Date(timestamp)) / 1000); 
         if (diff < 5) return 'baru saja';
         if (diff < 60) return `${diff} detik lalu`;
         if (diff < 3600) return `${Math.floor(diff / 60)} menit lalu`;
@@ -94,66 +135,6 @@ const handleSendMessage = async (pesan) => {
 
 };
 
-
-
-  // const handleSend = async () => {
-  //   if (!input.trim()) return;
-
-  //   const userMessage = {
-  //     text: input,
-  //     fromUser: true,
-  //     waktu: new Date(),
-  //   };
-
-  //   setMessages((prev) => [...prev, userMessage]);
-  //    setInput('');
-  //   setLoading(true);  
-  //   setShowTitle(false);
-
-  //   try {
-  //    const res = await fetch('/api/chat', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({ prompt: input })
-  //   });
-
-  //   const data = await res.json();
-  //   const botText = data.response || 'Tidak ada respons dari server.';
-  //   let i = 0;
-
-
-  //   const botMessage = { text: data.response, fromUser: false, waktu: new Date() };
-  //   setMessages((prev) => [...prev, botMessage]);
-   
-
-    
-  //   const typingInterval = setInterval(() => {
-  //     i++;
-  //     setMessages((prev) => {
-  //       const updatedMessages = [...prev];
-  //       updatedMessages[updatedMessages.length - 1].text = botText.slice(0, i);
-  //       return updatedMessages;
-  //     });
-
-  //     if (i >= botText.length) {
-  //       clearInterval(typingInterval);
-  //       setLoading(false);
-  //     }
-  //   }, 50);
-      
-  //   } catch (error) {
-  //     const errorMessage = {
-  //       text: 'Gagal silahkan ulangi kembali',
-  //       fromUser: false,
-  //       waktu: new Date(),
-  //     };
-
-  //     setMessages((prev) => [...prev, errorMessage]);
-  //   } finally {
-  //     setLoading(false);  // selesai loading
-  //   }
-
-  // };
 
 
   const handleSend = async () => {
@@ -234,29 +215,18 @@ const handleSendMessage = async (pesan) => {
  
 
   return (
-    <section class="bg-center dark:bg-gray-900 bg-cover"  ref={containerRef}>
+    <section class="bg-center dark:bg-gray-900"  ref={containerRef}>
   
-  <div className="mx-auto md:max-w-screen-xl pt-20 pb-8">
+  <div className="mx-auto md:max-w-screen-xl md:pt-20 md:pb-8 p-8">
   
 
-       <h2 className='font-bold md:text-5xl text-center dark:text-blue-500 text-blue-500 mb-4'>Asten<span className='text-purple-500 '>AI</span>✨</h2>
-        <h1
-            class="max-w-2xl mx-auto text-center font-manrope font-bold text-xl text-gray-500 mb-5 md:text-xl">
-           Percaya, Tidak Ada Orang Yang Lahir Untuk Gagal <br></br>
-        </h1>
-
-   <div class="flex items-center justify-between p-3 border-b border-gray-100 insta-border">
-            <div class="flex items-center space-x-3">
-            
-              <a href="/asistenai">
-              <IoArrowBack size={24}/>
-               </a>
+       
+   <div class="flex items-center justify-center p-3 ">
+        
+           <h2 className='font-bold md:text-5xl text-4xl text-center dark:text-blue-500 text-blue-500 md:mb-4'>Asten<span className='text-purple-500 '>AI</span>✨</h2>
+      
                 
-            </div>
-           
-            <a href="/asistenai/chatai">
-            <RiChatAiFill size={24} />
-            </a>
+          
 
         </div>
 
@@ -268,28 +238,28 @@ const handleSendMessage = async (pesan) => {
 
  
  
-<div class=" h-9/10 mb-32 bg-gradient-to-tr from-eee to-neutral-200 flex flex-col justify-center">
+<div class=" bg-gradient-to-tr from-eee to-neutral-200 flex flex-col justify-center">
 
-  <div class="w-[80%] md:max-w-screen-xl mx-auto  overflow-hidden">
+  <div class="w-[80%] md:max-w-screen-xl mx-auto overflow-hidden">
 
 
             {showTitle && (
             <h2 className="font-bold md:text-2xl text-center dark:text-gray-200 text-gray-300 p-8">
-                Apa Yang Bisa Kami Bantu 
+             {displayText}
             </h2>
             )}
 
 
-      <div ref={containerRef} className="">
+      <div ref={containerRef} className="w-full p-4">
 
           
 
         {messages.map((msg, index) => (
           <div key={index} className={`my-2 ${msg.fromUser ? 'text-right pl-12' : 'text-left'}`}>
-            <div className={`inline-block p-2 rounded-lg ${msg.fromUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}>
-               <p className="text-left">
-            {msg.text}
-               </p>
+            <div className={`inline-block p-2 rounded-lg ${msg.fromUser ? 'bg-blue-500 text-white' : ' md:text-black text-gray-400 '}`}>
+            <pre className="whitespace-pre-wrap break-words text-left">
+    {msg.text}
+  </pre>
             </div>
             <div className="text-xs text-gray-400">{timeAgo(msg.waktu)}</div>
           </div>
@@ -299,7 +269,7 @@ const handleSendMessage = async (pesan) => {
         {loading && (
         <div className="my-2 flex items-start justify-start">
           <div className="border-4 border-t-transparent border-blue-500 rounded-full w-6 h-6 animate-spin"></div>
-          <p  className="ml-2" >Mohon Tunggu...</p>
+          <p  className="ml-2 dark:text-white" >Mohon Tunggu...</p>
         </div>
       )} 
 
@@ -309,56 +279,76 @@ const handleSendMessage = async (pesan) => {
 
 
    
-    <div class="flex w-full mb-6 gap-3 text-sm text-neutral-800">
+    <div class="flex w-full mb-6 gap-3 text-sm text-neutral-800 overflow-x-auto gap-4 p-4">
       
-       <button type='button'
-      class="group shadow-xl bg-white relative grow border border-ccc  hover:shadow-md hover:-translate-y-[1px] hover:bg-purple-500 hover:text-white  rounded-xl p-4 transition-all duration-300 "
-       onClick={() => handleSendMessage("Apa Saja Layanan Yang Di Miliki Oleh DevKlit Saat Ini?")}
-      >
-      
-        Apa Saja Layanan Yang Di Miliki Oleh DevKlit Saat Ini?
-        
-        <svg class="absolute right-2 bottom-2 h-4 text-white opacity-0 -translate-x-4 group-hover:opacity-100  group-hover:translate-x-0 transition-all duration-300 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><g fill="none"><path d="M2 8a.75.75 0 0 1 .75-.75h8.787L8.25 4.309a.75.75 0 0 1 1-1.118L14 7.441a.75.75 0 0 1 0 1.118l-4.75 4.25a.75.75 0 1 1-1-1.118l3.287-2.941H2.75A.75.75 0 0 1 2 8z" fill="currentColor"></path></g></svg>
-      </button>
-      
-      <button type='button'
-      class="group bg-white shadow-xl relative grow border border-ccc shadow-sm hover:shadow-md hover:-translate-y-[1px] hover:bg-purple-500 hover:text-white  rounded-xl p-4 transition-all duration-300"
-      onClick={() => handleSendMessage("Paket Harga Yang Di Miliki Devklit Apa Saja ?")}
-      >
-        Paket Harga Yang Di Miliki Devklit Apa Saja ?
-      <svg class="absolute right-2 bottom-2 h-4 text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><g fill="none"><path d="M2 8a.75.75 0 0 1 .75-.75h8.787L8.25 4.309a.75.75 0 0 1 1-1.118L14 7.441a.75.75 0 0 1 0 1.118l-4.75 4.25a.75.75 0 1 1-1-1.118l3.287-2.941H2.75A.75.75 0 0 1 2 8z" fill="currentColor"></path></g></svg>
-      </button>
+    <button
+  type='button'
+  class="min-w-[250px] group shadow-xl bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white relative grow border border-ccc hover:shadow-md hover:-translate-y-[1px] hover:bg-purple-500 hover:text-white rounded-xl p-4 transition-all duration-300"
+  onClick={() => handleSendMessage('Apa Saja Layanan Yang Di Miliki Oleh DevKlit Saat Ini?')}
+>
+  Apa Saja Layanan Devklit?
 
-      <button type='button'
-      class="group bg-white shadow-xl relative grow border border-ccc shadow-sm hover:shadow-md hover:-translate-y-[1px] hover:bg-purple-500 hover:text-white rounded-xl p-4 transition-all duration-300"
-      onClick={() => handleSendMessage("Kantor Devklit Dimana ? Apa Anda Bisa Beritahu")}
-       >
-       Kantor Devklit Dimana ? Apa Anda Bisa Beritahu
-      <svg class="absolute right-2 bottom-2 h-4 text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><g fill="none"><path d="M2 8a.75.75 0 0 1 .75-.75h8.787L8.25 4.309a.75.75 0 0 1 1-1.118L14 7.441a.75.75 0 0 1 0 1.118l-4.75 4.25a.75.75 0 1 1-1-1.118l3.287-2.941H2.75A.75.75 0 0 1 2 8z" fill="currentColor"></path></g></svg>
-      </button>
+  <svg class="absolute right-2 bottom-2 h-4 text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g fill="none">
+      <path d="M2 8a.75.75 0 0 1 .75-.75h8.787L8.25 4.309a.75.75 0 0 1 1-1.118L14 7.441a.75.75 0 0 1 0 1.118l-4.75 4.25a.75.75 0 1 1-1-1.118l3.287-2.941H2.75A.75.75 0 0 1 2 8z" fill="currentColor"></path>
+    </g>
+  </svg>
+</button>
+
+       <button type="button"
+    class="min-w-[250px] group bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white shadow-xl relative border border-ccc shadow-sm hover:shadow-md hover:-translate-y-[1px] hover:bg-purple-500 hover:text-white rounded-xl p-4 transition-all duration-300"
+    onClick={() => handleSendMessage("Paket Harga Yang Di Miliki Devklit Apa Saja ?")}>
+    Paket Harga Yang Di Miliki Devklit Apa Saja ?
+    <svg class="absolute right-2 bottom-2 h-4 text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+      <g fill="none">
+        <path d="M2 8a.75.75 0 0 1 .75-.75h8.787L8.25 4.309a.75.75 0 0 1 1-1.118L14 7.441a.75.75 0 0 1 0 1.118l-4.75 4.25a.75.75 0 1 1-1-1.118l3.287-2.941H2.75A.75.75 0 0 1 2 8z"
+          fill="currentColor"></path>
+      </g>
+    </svg>
+  </button>
+
+  <button type="button"
+    class="min-w-[250px] group bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white shadow-xl relative border border-ccc shadow-sm hover:shadow-md hover:-translate-y-[1px] hover:bg-purple-500 hover:text-white rounded-xl p-4 transition-all duration-300"
+    onClick={() => handleSendMessage("Kantor Devklit Dimana ? Apa Anda Bisa Beritahu")}>
+    Kantor Devklit Dimana ? Apa Anda Bisa Beritahu
+    <svg class="absolute right-2 bottom-2 h-4 text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+      <g fill="none">
+        <path d="M2 8a.75.75 0 0 1 .75-.75h8.787L8.25 4.309a.75.75 0 0 1 1-1.118L14 7.441a.75.75 0 0 1 0 1.118l-4.75 4.25a.75.75 0 1 1-1-1.118l3.287-2.941H2.75A.75.75 0 0 1 2 8z"
+          fill="currentColor"></path>
+      </g>
+    </svg>
+  </button>
 
     </div>
 
-    <div class="bg-white h-28 rounded-2xl shadow-md border border-neutral-200 relative">
+    <div class="bg-white  dark:bg-gray-800 dark:border-gray-700 dark:text-white h-28 rounded-3xl shadow-md border border-neutral-200 relative">
       
-      <div class="flex">
-        <textarea 
-        class="grow m-4 outline outline-0 focus:outline-0 active:border-transparent min-h-16"
-        placeholder="Type your question here ..."
-        value={input}
-          onChange={(e) => setInput(e.target.value)}
-          disabled={loading}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              handleSend();
-            }
-          }}
-        >
-        </textarea>
+      <div class="flex ">
+      <textarea
+  ref={textareaRef}
+  className="grow  m-4 dark:bg-gray-800 outline outline-0 focus:outline-0 active:border-transparent min-h-16"
+  placeholder="Type your question here ..."
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+  disabled={loading}
+  onFocus={() => {
+    // Scroll ke textarea agar muncul di atas keyboard
+    setTimeout(() => {
+      textareaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 300); // Delay untuk tunggu keyboard muncul
+  }}
+  onKeyDown={(e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  }}
+></textarea>
       </div>
       
-      <div class="flex gap-2 items-center absolute right-2 bottom-2">
+      <div class="flex gap-2 items-center absolute right-2 bottom-2 ">
         <div class="text-xs">{input.length}/4000</div>
         <div class="bg-neutral-700 rounded-full text-white w-8 h-8 p-2 "><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144l144 144"></path>
@@ -371,10 +361,10 @@ const handleSendMessage = async (pesan) => {
     </div>
   </div>
   
-  <div class="w-[80%] md:max-w-screen-xl mx-auto pt-8 overflow-hidden">
+  <div class="w-[80%] md:max-w-screen-xl mx-auto pt-8 mb-8 overflow-hidden">
       
       <div 
-      class="group text-center shadow-xl bg-white relative grow border border-ccc hover:shadow-md rounded-xl p-4"
+      class="group text-center shadow-xl dark:bg-gray-800 dark:border-gray-700 text-sm dark:text-white bg-white relative grow border border-ccc hover:shadow-md rounded-xl p-4"
       >
       ✨ Perkenalkan Asisten AI (AstenAI) Membantu Anda Untuk Kebutuhan Anda Saat ini... Sudah Saatnya Anda Berkembang Untuk Masa Depan Anda..
         

@@ -1,24 +1,43 @@
-import React from 'react';
-import ScrollReveal from '../../../data/ScrollReveal';
 
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
 
 const HeroSection = () => {
+
+
+       const [ref, inView] = useInView({
+        triggerOnce: true, 
+        threshold: 0.1,    
+      });
     
+      
+    
+    const styles = useSpring({
+      opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0px)' : 'translateY(50px)', // ⬆️ Geser dari bawah
+        delay: inView ? 300 : 0,
+        config: { tension: 170, friction: 20 },
+        
+    });
     
     return (
 
         
         <>
 
-<section className="mx-auto   text-gray-600 body-font  dark:bg-gray-900 md:pt-12 md:pb-20 overflow-x-hidden   overflow-y-hidden">
+
+<section className="mx-auto md:relative  text-gray-600 body-font  dark:bg-gray-900 md:pt-12 md:pb-20 overflow-x-hidden md:p-16  overflow-y-hidden">
   
-  
-              <ScrollReveal direction="right" delay={800}>
+          <animated.div style={{ ...styles }}  ref={ref}>
     <div className="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center  md:px-16  sm:grid-cols-12 md:max-w-[1650px]   md:grid-cols-12">
       
         <div
             className="lg:flex-grow lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center block sm:col-span-7 justify-center md:col-span-6 text-center ">
          
+
+         <div class="absolute top-40 -left-10  w-[100px] h-[200px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-purple-600 via-blue-500 to-teal-400 opacity-20 rounded-full blur-3xl"></div>
+   <div class="absolute top-10 right-0 w-[200px] h-[100px] md:w-[500px] md:h-[500px] bg-gradient-to-tr from-indigo-500 via-fuchsia-500 to-blue-500 opacity-20 rounded-full blur-3xl"></div>
+
           <a href="/template" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
             <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">Pilih Template</span> <span className="text-sm font-medium">Untuk Digital Anda.</span> 
             <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
@@ -49,7 +68,8 @@ const HeroSection = () => {
       <img className="object-cover object-center rounded" alt="hero" src="./img/depan.png" />
       </div>
       </div>
-      </ScrollReveal>
+      </animated.div>
+   
                                        </section>
 
 

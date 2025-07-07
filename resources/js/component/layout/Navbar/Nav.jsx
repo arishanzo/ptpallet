@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
-
 import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
-import Routeer from '../../../Route/Routeer';
 
 
 
@@ -29,14 +26,22 @@ const Nav = () => {
   ];
   const [dark, setDark] = React.useState(false);
   
-      const darkModeHandler = () => {
-          setDark(!dark);
-          document.body.classList.toggle("dark");
-      }
-
       const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
+
+      const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+      setDark(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setDark(false);
+    }
+
+    // 
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setScroll(true);
@@ -54,26 +59,41 @@ const Nav = () => {
 
 
     return(
-<Router>
+
 <nav className='p-2 md:p-10 bg-white  dark:bg-gray-900  show sticky top-0 z-50 w-full '>
-    <div className={scroll ?'mx-auto md:max-w-[1700px] transition-all duration-300 bg-white dark:bg-gray-900 dark:text-white flex items-center justify-between px-6 py-4' : 'transition-all duration-300 mx-auto md:max-w-[1700px] bg-white dark:bg-gray-900 dark:text-white  shadow-purple-300 md:shadow-purple-300 dark:bg-dark-500  shadow-md mt-8  dark:text-white  justify-between items-center dark:shadow-xl md:shadow-2xl flex items-center rounded-full  p-4 md:p-8  text-black'}>
+    <div className={scroll ?'mx-auto md:max-w-[1700px] transition-all duration-300  dark:text-white flex items-center justify-between px-6 py-4 ' : 'transition-all duration-300 mx-auto md:max-w-[1700px]  dark:text-white  shadow-purple-300 md:shadow-purple-300 dark:bg-dark-500  shadow-md mt-8  dark:text-white  justify-between items-center dark:shadow-xl md:shadow-2xl flex items-center rounded-full  p-4 md:p-8  text-black'}>
   
-   <a href="/" class="md:pl-12 flex items-center space-x-3 rtl:space-x-reverse"> 
+   <a href="/" class="md:pl-12 pl-4 flex items-center space-x-3 rtl:space-x-reverse"> 
        <h1 className='font-bold md:text-4xl dark:text-blue-500 text-blue-500 '>Dev<span className='text-purple-500 '>Klit</span></h1>
    </a>
   
   <div class="flex flex-wrap md:order-2 space-x-3 md:pe-12 hidden w-full md:flex md:w-auto md:order-1">
-      <button onClick={()=> darkModeHandler()} class="relative flex h-11 w-full items-center justify-center p-6 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+      <button 
+        onClick={() => {
+          
+        const html = document.documentElement;
+        if (html.classList.contains('dark')) {
+          
+          html.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          setDark(false);
+        } else {
+          html.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+           setDark(true);
+        }
+      }}
+      class="relative flex h-11 w-full items-center justify-center p-6 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
                     {
                         
-                        dark && <IoSunny />
+                        dark && <IoMoon />
                     }
                     {
-                        !dark && <IoMoon />
+                        !dark && <IoSunny />
                     }
                 </button>
  
-     <a href='https://wa.me/628816982294?text=Halo%20saya%20ingin%20buat%20Website' type="button" class=" text-black bg-gray-100 hover:bg-gray-200 focus:ring-4  p-24 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-4 py-4 text-center dark:bg-gray-100 dark:hover:bg-gray-200 dark:focus:ring-gray-800">Kontak</a>
+     <a href='https://wa.me/628816982294?text=Halo%20saya%20ingin%20buat%20Website' type="button" class=" text-black bg-gray-100 dark:bg-purple-900 dark:text-gray-100 hover:bg-purple-900 hover:text-white focus:ring-4  p-24 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-4 py-4 text-center dark:bg-gray-100 dark:hover:bg-gray-600  dark:focus:ring-gray-800">Kontak</a>
     
     
     
@@ -85,20 +105,39 @@ const Nav = () => {
      {navItems.map(item => (
           <li key={item.id}
           >
-          <NavLink to={item.link} aria-current="page" className={({ isActive }) => (isActive ?  "sm:p-2 sm:mt-4 md:p-4 md:m-2 bg-purple-600 text-white hover:font-semibold rounded-full m-2 cursor-pointer justify-between items-center" : "sm:p-2 sm:mt-4 md:p-4 md:m-2 hover:bg-purple-600 hover:text-white hover:font-semibold rounded-full m-2 cursor-pointer justify-between items-center")}>
-          {item.text} </NavLink>
+       <a href={item.link}  aria-current="page" className={`${window.location.pathname === item.link  ?  `sm:p-2 sm:mt-4 md:p-4 md:m-2 bg-purple-600 text-white hover:font-semibold rounded-full m-2 cursor-pointer justify-between items-center` : `sm:p-2 sm:mt-4 md:p-4 md:m-2 hover:bg-purple-600 hover:text-white hover:font-semibold rounded-full m-2 cursor-pointer justify-between items-center dark:text-white`}`}>
+          {item.text} </a>
           </li>
+
+          
         ))}
     </ul>
   </div>
 
-  <button   onClick={()=> darkModeHandler()} data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+  <button   
+    onClick={() => {
+          
+        const html = document.documentElement;
+        if (html.classList.contains('dark')) {
+          
+          html.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          setDark(false);
+        } else {
+          html.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+           setDark(true);
+        }
+      }}
+      data-collapse-toggle="navbar-sticky" 
+      type="button" 
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
                    {
                         
-                        dark && <IoSunny />
+                        dark && <IoMoon />
                     }
                     {
-                        !dark && <IoMoon />
+                        !dark && <IoSunny />
                     }
              
     </button>
@@ -173,8 +212,7 @@ const Nav = () => {
 
 </nav>
 
-<Routeer />
-</Router>
+
         
     );
 

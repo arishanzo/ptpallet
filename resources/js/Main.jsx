@@ -1,12 +1,26 @@
 import './bootstrap';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Nav from './component/layout/Navbar/Nav';
 import Footer from './component/layout/Footer/Footer';
+import Routeer from './Route/Routeer';
 
+
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 
 function Main() {
+  useEffect(() => {
+    const userTheme = localStorage.getItem('theme'); // 'dark' / 'light' / null
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (userTheme === 'dark' || (!userTheme && systemPrefersDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
   (function($) { "use strict";
 
     $(document).ready(function(){"use strict";
@@ -50,10 +64,11 @@ function Main() {
   
     return (
       <div>
-        
+        <Router>
      <Nav />
-    
+     <Routeer />
  <Footer />
+ </Router>
       </div>
     );
   }

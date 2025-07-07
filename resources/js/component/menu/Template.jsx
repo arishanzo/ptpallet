@@ -80,7 +80,7 @@ return (
       <div className="flex items-center space-x-4">
 
       <div
-            className="flex items-center bg-gray-100 justify-between  w-full max-w-full mx-auto lg:mr-0 rounded-full p-2.5 min-[470px]:p-1.5 pl-5 min-[470px]:pl-7 border border-gray-100 transition-all duration-300 hover:border-gray-400 focus-within:border-gray-400">
+            className="flex items-center bg-gray-100 dark:bg-gray-800 dark:border-gray-800 dark:text-white justify-between  w-full max-w-full mx-auto lg:mr-0 rounded-full p-2.5 min-[470px]:p-1.5 pl-5 min-[470px]:pl-7 border border-gray-100 transition-all duration-300 hover:border-gray-400 focus-within:border-gray-400">
             <input type="text"
               className="bg-transparent text-base font-normal  placeholder:text-gray-500 focus-within:outline-0"
               placeholder="Cari Template"

@@ -38,10 +38,7 @@ const Footer = () => {
                     <div>
                         <a href="/">
                             <div className="flex items-center space-x-3 text-4xl mb-8 font-medium">
-                                <span>
-                                    <img src="./img/logo/logo.png" alt="AI Logo"
-                                        width="64" height="64" className="w-16"/>
-                                </span>
+                              
                                 <h1 className='font-bold dark:text-blue-500 text-blue-500 '>Dev<span className='text-purple-500 '>Klit</span></h1>
                                 </div>
 

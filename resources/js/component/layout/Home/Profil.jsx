@@ -1,55 +1,47 @@
 import React from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import ScrollReveal from '../../../data/ScrollReveal';
 import Story from './Story';
 
 
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
+import Project from './Project';
+
 const Profil = () => {
 
-  const posts = [
-    {
-      id: 1,
-      category: '01',
-      imageUrl:
-        './img/project/p1.jpg',
-      title: "Aplikasi Manajemen Daftar Hadir Karyawan",
-      link: '#',
-    },
-    {
-      id: 2,
-      category: '02',
-      imageUrl:
-        './img/project/p2.jpg',
-      title: "Aplikasi Go Sewa Mobil",
-      link: '#',
-    },
-    {
-      id: 3,
-      category: '03',
-      imageUrl:
-        './img/project/p3.jpg',
-      title: 'Aplikasi Manajemen Siswa',
-      link: '#',
-    },
-  ];
+  
+       const [ref, inView] = useInView({
+          triggerOnce: true, 
+          threshold: 0.1,    
+        });
+      
+        
+      
+      const styles = useSpring({
+        opacity: inView ? 1 : 0,
+          transform: inView ? 'translateY(0px)' : 'translateY(50px)', // ⬆️ Geser dari bawah
+          delay: inView ? 300 : 0,
+          config: { tension: 170, friction: 20 },
+      });
+
+
    
     return (
 
         <>
-            <ScrollReveal direction="right" delay={800}>
-    <section className=" dark:bg-gray-900 md:pt-32 pt-16 pb-16 md:pb-32    " id='about'>
+           
+    <section className=" dark:bg-gray-900  pt-16 pb-16    " id='about'>
    
-      
-    <div className="mx-auto grid max-auto  md:max-w-[1700px]  md:px-16  sm:grid-cols-12 md:pb-20 md:grid-cols-12 ">
+            <animated.div style={{ ...styles }}   ref={ref}>
+    <div className="mx-auto grid max-auto  md:max-w-[1700px]  md:px-16 md:p-16  sm:grid-cols-12 md:pb-20 md:grid-cols-12 ">
 
       
 
     <div className="block sm:col-span-7 justify-center md:col-span-6   justify-self-between  md:flex">
-    <DotLottieReact
-      src="https://lottie.host/9142a6fb-4291-4849-a784-239b24a400a7/51GA6rwnfd.lottie"
+      <DotLottieReact
+      src="https://lottie.host/af4bf1df-0b26-4cf4-88c3-7372ca4cfd73/OQDMXPCmSp.lottie"
       loop
       autoplay
-      color='white'
     />
 
            </div>
@@ -65,14 +57,14 @@ const Profil = () => {
       
    <span class="font-bold font-sans sm:p-0 text-gray-500 dark:text-gray-400 py-3.5 md:max-w-[650px] md:mb-12 md:text-sm  lg:mb-5 lg:text-sm">Perusahaan Kami Telah Membantu Sebanyak:</span>
         <div class="grid grid-cols-1 gap-8 mt-4 lg:grid-cols-2 xl:grid-cols-3">
-   <div class="flex items-center shadow justify-between p-4 bg-white rounded-md">
+   <div class="flex items-center shadow justify-between p-4 bg-white dark:bg-gray-800 rounded-md">
 
  
        <div>
            <span class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase">
            Perusahaan
            </span>
-           <h5 class="text-2xl font-semibold">100+</h5>
+           <h5 class="text-2xl font-semibold dark:text-gray-200">100+</h5>
          
        </div>
        <div>
@@ -85,12 +77,12 @@ const Profil = () => {
        </div>
    </div>
 
-   <div class="flex items-center shadow justify-between p-4 bg-white rounded-md">
+   <div class="flex items-center shadow justify-between p-4 bg-white dark:bg-gray-800 rounded-md">
        <div>
        <span class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase">
            Kepuasaan
            </span>
-           <h5 class="text-2xl font-semibold">99+</h5>
+           <h5 class="text-2xl font-semibold dark:text-gray-200">99+</h5>
          
        </div>
        <div>
@@ -105,12 +97,12 @@ const Profil = () => {
        </div>
    </div>
 
-   <div class="flex items-center shadow justify-between p-4 bg-white rounded-md">
+   <div class="flex items-center shadow justify-between p-4 bg-white dark:bg-gray-800 rounded-md">
        <div>
        <span class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase">
           SEO Search
            </span>
-           <h5 class="text-2xl font-semibold">98%</h5>
+           <h5 class="text-2xl font-semibold dark:text-gray-200">98%</h5>
          
        </div>
        <div>
@@ -133,57 +125,25 @@ const Profil = () => {
    
     <Story />           
 
-    <div className="max-w-screen-xl md:max-w-[1700px] pt-4  mx-auto p-5 sm:p-10   ">
+    <div className="max-w-screen-xl md:max-w-[1700px] pt-4  mx-auto p-5 md:p-24 sm:p-10   ">
 
-    <div class="border-b p-8 flex justify-between text-sm ">
+    <div class=" p-8 flex justify-between text-sm ">
         <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
             
             <a href="#" class="font-semibold inline-block">Project</a>
         </div>
-        <a href="#">See All</a>
+        <a href="#" className='dark:text-gray-600'>See All</a>
     </div>
 
+<Project/>
 
-      <div className="grid grid-cols-1 md:pt-28 sm:grid-cols-2 md:grid-cols-3 gap-10 p-2">
-        {posts.map((post) => (
-          <div
-            key={post.id}
-            className="relative h-64 w-full flex items-end justify-start text-left bg-contain transform md:hover:scale-110 transition-all duration-300"
-            style={{ backgroundImage: `url(${post.imageUrl})` }}
-          >
-            {/* gradient overlay */}
-            <div className="absolute inset-0 mt-32 bg-gradient-to-b from-transparent to-purple-600" />
 
-            {/* badge + date */}
-            <div className="absolute top-0 left-0 right-0 mx-5 mt-2 flex justify-between items-center">
-              <a
-                href={post.link}
-                className="text-xs bg-indigo-600 text-white px-5 py-2 uppercase hover:bg-white hover:text-indigo-600 transition ease-in-out duration-500"
-              >
-                {post.category}
-              </a>
-            
-            </div>
-
-            {/* title */}
-            <main className="p-5 z-10">
-              <a
-                href={post.link}
-                className="text-md tracking-tight font-medium leading-7 text-white hover:underline"
-              >
-                {post.title}
-              </a>
-            </main>
-          </div>
-        ))}
-      </div>
     </div>
               
-   
+   </animated.div>
+      
    
   </section>
-
-    </ScrollReveal>
     </>
     );
 }

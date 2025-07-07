@@ -9,11 +9,11 @@ const AsistenAi = () => {
 
         
         <>
-<section class="pt-2 lg:pt-16 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover">
-    <div class="mx-auto pt-32 max-w-full px-4 sm:px-6 lg:px-8 relative text-center">
+<section class="pt-16 lg:pt-16  p-8 dark:bg-gray-900 bg-center bg-cover">
+    <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8 relative text-center">
        
         <h1
-            class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]">
+            class="max-w-2xl mx-auto text-center font-manrope font-bold text-3xl text-gray-900 dark:text-gray-100 mb-5 md:text-5xl md:leading-[50px]">
            Asisten AI Kami Siap Membantu Anda Merancang <br></br>
             <span class="text-indigo-600">Produk Digital Anda </span>
         </h1>

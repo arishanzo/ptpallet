@@ -3,7 +3,25 @@ import Layananperbaikan from './Layout/layanan/Layananperbaikan';
 import Calltoaction from './Layout/layanan/Calltoaction';
 
 
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
+
 const Layananmenu = () => {
+
+  
+      const [ref, inView] = useInView({
+              triggerOnce: true, 
+              threshold: 0.1,    
+            });
+          
+            
+          
+          const styles = useSpring({
+            opacity: inView ? 1 : 0,
+              transform: inView ? 'translateY(0px)' : 'translateY(50px)', // ⬆️ Geser dari bawah
+              delay: inView ? 300 : 0,
+              config: { tension: 170, friction: 20 },
+          });
 
     const layananItems = [
         { id: 1, 
@@ -49,10 +67,11 @@ const Layananmenu = () => {
        
       ];
  
-        return (
-            <section className="feature__section  dark:bg-gray-900 dark:text-white ">
+        return (    
+            <section className=" dark:bg-gray-900 dark:text-white ">
+            
             <div className="md:max-w-[1600px] px-7 lg:px-10 py-14 mx-auto ">
-     
+     <animated.div style={{ ...styles }}   ref={ref}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 md:relative text-center">
             <div class="absolute top-5 -left-10  w-[100px] h-[200px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-purple-600 via-blue-500 to-teal-400 opacity-20 rounded-full blur-3xl"></div>
    <div class="absolute top-10 right-0 w-[200px] h-[100px] md:w-[500px] md:h-[500px] bg-gradient-to-tr from-indigo-500 via-fuchsia-500 to-pink-500 opacity-20 rounded-full blur-3xl"></div>
@@ -80,7 +99,7 @@ const Layananmenu = () => {
               <div className="w-full  lg:w-full shadow-purple-300  isolate grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {layananItems.map(item => (   
                 <div key={item.id}
-                  className="grid grid-rows-1 p-8 dark:bg-gray-800  bg-white dark:bg-gray-800 shadow shadow-xl dark:border-none rounded-xl gap-y-2 w-full border  hover:inset-shadow-indigo-500  transition-shadow duration-150 ease-linear cursor-pointer  transform md:hover:scale-75">
+                  className="grid grid-rows-1 p-8  bg-white dark:bg-gray-800 shadow shadow-xl dark:border-none rounded-xl gap-y-2 w-full border  hover:inset-shadow-indigo-500  transition-shadow duration-150 ease-linear cursor-pointer  transform md:hover:scale-75">
                   <div className="flex flex-col gap-y-2.5">
                     <h3 className="text-xl dark:text-gray-300 font-bold">Layanan {item.judul}</h3>
                     <p className="text-xl font-semibold"></p>
@@ -98,11 +117,12 @@ const Layananmenu = () => {
                    ))}
               </div>
          
+</animated.div>
             </div>
-
 
             <Layananperbaikan />
             <Calltoaction />
+
 
           </section>
 
