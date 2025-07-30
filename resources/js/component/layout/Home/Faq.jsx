@@ -67,64 +67,129 @@ const Faq = () => {
    
     return (
 
-        <div className="py-4 shadow-2xl bg-purple-900  bg-center bg-cover dark:bg-purple-900">
-                <animated.div style={{ ...styles }}   ref={ref}>
-        <div className="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
-    
-            <div className="text-center md:mt-32">
-                <p className="mt-4 text-lg leading-7 text-gray-100 font-regular">
-                    F.A.Q
-                </p>
-                <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-purple-200">
-                    Frequently Asked <span className="text-purple-400">Questions</span>
-                </h3>
-   
+      <section class="sm:py-10 bg-blue-900 overflow-hidden" id="faq">
+        <div class="container mx-auto px-4">
+            <div class="relative py-16 px-8 bg-yelloww overflow-hidden rounded-3xl">
+                <div class="relative z-10 md:max-w-7xl mx-auto">
+                    <div class="md:max-w-xl mb-10"><span class="inline-block mb-5 text-md text-mygray text-white font-bold uppercase tracking-widest">F.A.Q</span>
+                        <h2 class="font-heading text-4xl    text-mygray text-4xl lg:text-5xl text-red-400 font-bold font-heading">
+                            Frequently Asked Questions</h2>
+                    </div>
+                    <div class="flex flex-wrap -m-3">
+                        <div class="w-full p-3">
+                            <div class="p-10 bg-blue-700 rounded-3xl">
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">PALLET YANG BISA DI REPAIR ?
+                                        </h3>
+                                    </div>
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <p class="text-blue-200 text-lg font-medium">Papan atas rusak/hilang/patah, Stringer samping rusak/hilang/patah
+                                    ,Balok rusak/hilang/patah
+                                    ,Papan bawah patah/rusak/hilang
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full p-3">
+                            <div class="p-10 bg-blue-700 rounded-3xl">
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">PALLET YANG TIDAK BISA DIREPAIR ? 
+                                        </h3>
+                                    </div>
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <p class="text-blue-200 font-medium">Pallet lapuk
+                                            , Pallet terkontaminasi bahan kimia
+                                            , Pallet hancur (75% komponen pallet rusak/hilang/patah)
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full p-3">
+                            <div class="p-10 bg-blue-700 rounded-3xl">
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">Kegunaan palet dalam aplikasi penumpukan atau rak?
+                                        </h3>
+                                    </div>
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <p class="text-blue-200 font-medium">Pallet digunakan untuk stacking maupun racking sesuai kebutuhan pelanggan dan jenis gudang penyimpanan.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full p-3">
+                            <div class="p-10 bg-blue-700 rounded-3xl">
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">Berapa suhu penyimpanannya ( kurang dari -10°C, -10 hingga 10°C, lebih dari 10°C ) ?
+                                        </h3>
+                                    </div>
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <p class="text-blue-200 font-medium">Penyimpanan tersedia pada suhu:
+
+                                        kurang dari -10°C (frozen storage)
+
+                                        -10 to 10°C (chilled)
+
+                                        lebih dari 10°C (ambient/normal temperature)
+                                        Kami menyesuaikan penyimpanan sesuai kebutuhan produk.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="w-full p-3">
+                            <div class="p-10 bg-blue-700 rounded-3xl">
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">Berapa kuantitas dan waktu pengiriman (Pengiriman sebagian tersedia)?
+                                        </h3>
+                                    </div>
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <p class="text-blue-200 font-medium">Kuantitas dan waktu pengiriman fleksibel. Pengiriman parsial (partial shipment) tersedia berdasarkan jadwal dan volume permintaan. Silakan konfirmasi jumlah pasti untuk estimasi waktu.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full p-3">
+                            <div class="p-10 bg-blue-700 rounded-3xl">
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">
+                                           
+Berapa ukuran palet yang Anda gunakan? Berapa beban maksimum per palet?
+                                        </h3>
+                                    </div>
+                                    <div class="w-full md:w-1/2 p-2">
+                                        <p class="text-blue-200 font-medium">Kami menggunakan pallet standar ukuran 1100 x 1100 mm atau sesuai permintaan khusus. Kapasitas beban maksimal per pallet adalah sekitar 1000 kg (tergantung jenis dan kondisi pallet serta distribusi beban).
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+
+
+                    </div>
+                </div>
             </div>
-    
-            <div className="">
-       
-            <div className="md:mb-32 bg-white dark:bg-gray-800 dark:border-gray-700 border border-gray-200 divide-y  dark:divide-gray-700 divide-gray-200 rounded-xl m-12">
-            {faqdata.map(item => (   
-                 <div key={item.id}>
-    <details className="p-6 group" name='fag'>
-        <summary className="flex items-center justify-between cursor-pointer">
-       
-            <h5 className="text-lg font-medium text-gray-900 dark:text-gray-400">
-            {item.judul}
-            </h5>
 
-            <span className="relative flex-shrink-0 ml-1.5 w-5 h-5">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    className="absolute inset-0 w-5 h-5 opacity-100 dark:text-white group-open:opacity-0" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" strokeLinejoin="round"
-                        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    className="absolute inset-0 w-5 h-5 opacity-0 dark:text-white group-open:opacity-100" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" strokeLinejoin="round"
-                        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </span>
-        </summary>
-
-        <p className="mt-4 leading-relaxed  text-gray-700 dark:text-gray-600">
-        {item.text}        </p>
-    </details>
-    </div>
-))}
-
-</div>
-
-
-            </div>
-    
         </div>
 
-        </animated.div>
-    </div>
+
+    </section>
      
     );
 }

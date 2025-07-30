@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devklit Technologhy</title>
+    <title>PT. INDONESIA PALLET LOGISTIK</title>
     @vite('resources/css/app.css')
     @viteReactRefresh
     @vite('resources/js/App.jsx')
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' />
     
-  <link rel="icon" type="image/x-icon" href="./img/logo/logo.png">
+  <link rel="icon" type="image/x-icon" href="./img/logo/logoipl.png">
 
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 

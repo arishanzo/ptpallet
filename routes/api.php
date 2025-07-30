@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\imagepembayaran;
 use App\Http\Controllers\ChatController;
-
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/img', [imagepembayaran::class, 'getAllImages']);
 
-Route::post('/chat', [ChatController::class, 'generate']);
+Route::post('/contact', [ContactController::class, 'send'])
+     ->middleware('throttle:5,1'); // max 5 requests per menit per IP
+
 

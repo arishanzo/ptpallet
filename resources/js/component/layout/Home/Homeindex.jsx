@@ -1,11 +1,12 @@
 
 import React from 'react';
-import HeroSection from './herosection';
-import Price from './Price';
+import HeroSection from './Herosection';
 import Profil from './Profil';
-import Keunggulan from './Keunggulan';
+import Service from './Service';
+import Workshop from './Workshop';
+import Gallery from './Gallery';
 import Faq from './Faq';
-import Layanan from './layanan';
+import Contact from './Contact';
 
 
 
@@ -15,13 +16,12 @@ function Homeindex() {
     return (
       <div>
      <HeroSection />
-   <Layanan/>
-     <Profil />
-   
-     <Price />
- <Keunggulan />
- <Faq />
-
+        <Profil />
+  <Service />
+  <Workshop />
+  <Gallery />
+<Faq />
+<Contact />
       </div>
     );
   }

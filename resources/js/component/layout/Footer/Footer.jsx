@@ -9,177 +9,131 @@ const Footer = () => {
     return (
 
         <>
-  <footer className="bg-[#1A1D2B]">
-    
-    <div className="container mx-auto p-0 md:p-8 xl:px-0">
+ <footer class="bg-gray-900 md:py-32 text-white pt-12 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-10 lg:grid-cols-4 gap-8 mb-8">
+      
+      <div class="space-y-4  lg:col-span-5">
+        <div class="flex items-center">
+                   <img class="block h-20 pl-8 md:pl-0 w-auto" src="./img/logo/logoiplpolos.png" alt="Logo" />
+     </div>
+     
+          <span class="ml-2 text-xl font-bold">PT. Indonesia Pallet Logistik</span>
         
-        <div className="mx-auto max-w-8xl px-6 pb-10 pt-16">
-
-        <div className="grid grid-cols-12 pb-12 border-b-2 border-gray-700 max-lg:gap-7">
-        <div className="col-span-12 lg:col-span-6">
-          <h2 className="font-manrope font-bold text-xl md:text-3xl leading-tight text-white mb-2 ">Temukan Info dan Promo Terbaru</h2>
-          <p className="text-base text-gray-400 max-w-xl font-normal ">Bergabung dengan komunitas kami. Kami akan memastikan Anda menjadi yang pertama mengetahui berita menarik dan eksklusif dari kami.</p>
+        <p class="text-gray-400 py-2">Trusted Business Partner for Reliable Logistics and Support</p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <span class="sr-only">Facebook</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+            </svg>
+          </a>
        
-       
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <span class="sr-only">Instagram</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <span class="sr-only">LinkedIn</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+            </svg>
+          </a>
         </div>
-        <div className="col-span-12 lg:col-span-6 flex flex-col gap-4 items-center">
-          <div
-            className="flex items-center justify-between bg-gray-800 w-full max-w-full mx-auto lg:mr-0 rounded-full p-2.5 min-[470px]:p-1.5 pl-5 min-[470px]:pl-7 border border-gray-700 transition-all duration-300 hover:border-gray-400 focus-within:border-gray-400">
-            <input type="text"
-              className="bg-transparent text-base font-normal text-white placeholder:text-gray-500 focus-within:outline-0"
-              placeholder="Your email here..."/>
-            <button
-              className="py-3 px-7 rounded-full bg-violet-500 text-base font-semibold text-white shadow-sm shadow-transparent transition-all duration-500 focus-within:outline-0 hover:bg-violet-700 focus-within:bg-violet-700 ">Subscribe</button>
-          </div>
-                </div>
       </div>
-            <div className="xl:grid xl:grid-cols-3 mt-16 xl:gap-8">
-                <div className="space-y-4">
-                    <div>
-                        <a href="/">
-                            <div className="flex items-center space-x-3 text-4xl mb-8 font-medium">
-                              
-                                <h1 className='font-bold dark:text-blue-500 text-blue-500 '>Dev<span className='text-purple-500 '>Klit</span></h1>
-                                </div>
 
-                        </a>
-                    </div>
-                    <div className="max-w-md pr-16 text-lg text-gray-200 font-bold"> Alamat Kantor:
-                    </div>
-                    <div className="max-w-md pr-16 text-md text-gray-200"> Jl. Basuki Rahmad Rangge, Sukomulyo, Kec. Lamongan, Lamongan - Jawa Timur
-                    </div>
-                    <div className="flex space-x-2 ">
-                        <a href="https://www.linkedin.com/company/devklit-technologhy/" target="_blank" className="text-gray-200 hover:text-gray-200 mt-8">
-                            <span className="sr-only">Linkedin</span><svg fill="currentColor" viewBox="0 0 24 24"
-                                className="h-6 w-6" aria-hidden="true">
-                                <path fillRule="evenodd"
-                                    d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                    clipRule="evenodd"></path>
-                            </svg>
-                        </a>
-                        <a href="" target="_blank" className="text-gray-200 hover:text-gray-200 mt-8">
-                        <svg className="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path fill="currentColor" fillRule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clipRule="evenodd"/>
-</svg>
+      <div class="space-y-4  lg:col-span-1 ">
+        <h3 class="text-lg font-semibold">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><button    onClick={() => {
+          const section = document.getElementById('home');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }}   class="text-gray-400 hover:text-white transition">Home</button></li>
 
-                        </a>
+          <li><button 
+             onClick={() => {
+          const section = document.getElementById('profil');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }} 
+          class="text-gray-400 hover:text-white transition">Profil</button></li>
+
+          <li><button 
+             onClick={() => {
+          const section = document.getElementById('services');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }} 
+          class="text-gray-400 hover:text-white transition">Our Services</button></li>
+
+          <li><button
+              onClick={() => {
+          const section = document.getElementById('gallery');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }} 
+           class="text-gray-400 hover:text-white transition">Our Gallery</button></li>
+
+          <li><button    onClick={() => {
+          const section = document.getElementById('contact');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }}  class="text-gray-400 hover:text-white transition">Our Contact</button></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4 lg:col-span-2">
+        <h3 class="text-lg font-semibold">Services</h3>
+        <ul class="space-y-2">
+          <li><button    onClick={() => {
+          const section = document.getElementById('services');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }}  class="text-gray-400 hover:text-white transition">Manufacture Pallet</button></li>
+
+          <li><button   onClick={() => {
+          const section = document.getElementById('services');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }}  class="text-gray-400 hover:text-white transition">Rental Pallet</button></li>
+
+          <li><button   onClick={() => {
+          const section = document.getElementById('services');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }} class="text-gray-400 hover:text-white transition">Training Pallet Handling</button></li>
+
+          <li><button    onClick={() => {
+          const section = document.getElementById('services');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }}  class="text-gray-400 hover:text-white transition">Repair Treatment Pallet</button></li>
+
+          <li><button   onClick={() => {
+          const section = document.getElementById('services');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+           }}  class="text-gray-400 hover:text-white transition">Pallet Managemant System</button></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4 lg:col-span-2">
+        <h3 class="text-lg font-semibold">Contact Us</h3>
+        <address class="not-italic text-gray-400">
+          <p>Jl. Bantar Jati, Bantar Jati, Kec. Klapanunggal, Kabupaten Bogor, Jawa Barat 16710</p>
+         
+          <p class="mt-2">Email: <a href="mailto:info@company.com" class="hover:text-white transition">company@indonesiapallet.com</a></p>
+          <p>Phone: <a href="tel:+11234567890" class="hover:text-white transition">+62 81324221338</a></p>
+        </address>
+      </div>
 
 
-                        <a href="" target="_blank" className="text-gray-200 hover:text-gray-200 mt-8">
-                        <svg className="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-  <path fillRule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clipRule="evenodd"/>
-</svg>
-
-
-                        </a>
-                    </div>
-                </div>
-                <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                    <div className="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 className="text-md font-semibold leading-6 text-white">Layanan Kami</h3>
-                            <ul role="list" className="mt-6 space-y-4">
-                                <li>
-                                    <a href="/layanan"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Web Sekolah
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/layanan"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Web E-Commerce
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/layanan"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Web Landing-Page
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/layanan"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Web Desa / Pemerintah
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="mt-10 md:mt-0">
-                            <h3 className="text-md font-semibold leading-6 text-white">Paket Website</h3>
-                            <ul role="list" className="mt-6 space-y-4">
-                                <li>
-                                    <a href="/#pembayaran"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Paket Web Basic
-                                   
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/#pembayaran"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Paket Web Profesional
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/#pembayaran"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Paket Web Custom
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 className="text-md font-semibold leading-6 text-white">Menu</h3>
-                            <ul role="list" className="mt-6 space-y-4">
-                                <li>
-                                    <a href="/"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/layanan" className="text-md leading-6 text-gray-300 hover:text-gray-50">Layanan / Promo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/template"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Template Website
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/team"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Join Us Team
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="mt-10 md:mt-0">
-                            <h3 className="text-md font-semibold leading-6 text-white">Perusahan</h3>
-                            <ul role="list" className="mt-6 space-y-4">
-                                <li>
-                                    <a href="/#about"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">About Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/team"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Careers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://wa.me/6288805317354?text=Halo%20saya%20ingin%20buat%20Website"
-                                        className="text-md leading-6 text-gray-300 hover:text-gray-50">Contact Us
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="mt-16 border-t border-gray-400/30 pt-8 sm:mt-20 lg:mt-24">
-                <div className="text-md text-center text-white">
-                    Copyright © 2022 - 2025 .
-                    <a rel="noopener" href="/">DevKlit
-                    </a>
-                </div>
-            </div>
-        </div>
+      
+      
     </div>
+
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Company. All rights reserved.</p>
+      <div class="flex space-x-6">
+        <a href="#" class="text-gray-500 hover:text-white text-sm transition">Privacy Policy</a>
+        <a href="#" class="text-gray-500 hover:text-white text-sm transition">Terms of Service</a>
+        <a href="#" class="text-gray-500 hover:text-white text-sm transition">Cookies</a>
+      </div>
+    </div>
+  </div>
 </footer>
     </>
     );

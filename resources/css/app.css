@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .spinner {
           margin: 10px auto;
           width: 24px;
@@ -81,7 +82,7 @@
     cursor: pointer;
     display: block;
     border-radius: 50px;
-    box-shadow: inset 0 0 0 2px rgba(136, 19, 214, 0.2);
+    box-shadow: inset 0 0 0 2px rgba(123, 4, 2, 0.147);
     z-index: 10000;
     opacity: 0;
     visibility: hidden;
@@ -104,7 +105,7 @@
     text-align: center;
     line-height: 46px;
     font-size: 18px;
-    color: #1f2029;
+    color: #eb3a3a;
     left: 0;
     top: 0;
     height: 46px;
@@ -133,7 +134,7 @@
     line-height: 46px;
     font-size: 18px;
     opacity: 0;
-    background-image: linear-gradient(298deg, #5f25cc, #a54ad6);
+    background-image: linear-gradient(298deg, #ff4545, #cd1919);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     left: 0;
