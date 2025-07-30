@@ -99,7 +99,7 @@ const Service = () => {
                     <p class="text-gray-400  mb-8 two-lines">
                        {service.text}
                     </p>
-                    <a href="https://wa.me/081324221338"
+                    <a href="https://wa.me/081297343101"
                         class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full">Hubungi</a>
                 </div>
             </div>

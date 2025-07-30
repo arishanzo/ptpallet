@@ -25,7 +25,7 @@ const Misi = () => {
 
           <animated.div style={{ ...styles }}   ref={ref}>
        
-    <section class="  mb-16  p-8 ">
+    <section class="  mb-16  p-8 " id="profil">
     <div class="md:max-w-[1580px] max-w-md mx-auto px-4 sm:px-6 lg:px-8 bg-red-50 rounded-2xl shadow-lg shadow-red-500/50">
         <div className='p-16 px-4 sm:px-6 lg:px-8'>
         <h2 class="text-3xl font-extrabold text-gray-900">Misi Kami</h2>

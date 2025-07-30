@@ -7,6 +7,7 @@ import Workshop from './Workshop';
 import Gallery from './Gallery';
 import Faq from './Faq';
 import Contact from './Contact';
+import Chat from './Chat';
 
 
 
@@ -15,6 +16,7 @@ function Homeindex() {
 
     return (
       <div>
+        <Chat/>
      <HeroSection />
         <Profil />
   <Service />

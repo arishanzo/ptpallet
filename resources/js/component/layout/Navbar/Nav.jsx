@@ -16,7 +16,7 @@ const Nav = () => {
  // State to manage the navbar's visibility
    const [nav, setNav] = useState(false);
     const [scroll, setScroll] = useState(false);
-   const [activeMenu, setActiveMenu] = useState('/');
+   const [activeMenu, setActiveMenu] = useState('#home');
 
    // Toggle function to handle the navbar's display
    const handleNav = () => {
@@ -76,7 +76,7 @@ const Nav = () => {
 <nav className='bg-white mx-auto  show sticky top-0 z-50 w-full overflow-x-hidden'>
   
     <div
-  className={`mx-auto px-4 py-10  sm:px-2  lg:px-8 transition-all duration-300 flex items-center ${
+  className={`mx-auto px-4 py-2 md:py-10  sm:px-2  lg:px-8 transition-all duration-300 flex items-center ${
     scroll
       ? 'md:max-w-[1650px] dark:text-white justify-between '
       : 'bg-white text-black md:max-w-[1500px] dark:bg-dark-500 dark:text-white justify-between'
@@ -131,7 +131,9 @@ const Nav = () => {
             key={item.id}
             className=' py-2 pr-4 p-4 text-gray-900 rounded hover:bg-red-100 md:hover:bg-transparent '
           >   <a 
-          href={item.link} aria-current="page" className={`${window.location.pathname === item.link  ?  'block py-2 px-3 text-white rounded bg-red-600 hover:bg-red-600 hover:text-white text-gray-900   ' : `block py-2 px-3 text-gray-900 rounded hover:bg-red-100 md:hover:bg-transparent hover:text-gray-900 `}`}>
+          onClick={handleActive(item.link)}  
+       aria-current="page" 
+          href={item.link} className={`${activeMenu === item.link  ?  'block py-2 px-3 text-white rounded bg-red-600 hover:bg-red-600 hover:text-white text-gray-900   ' : `block py-2 px-3 text-gray-900 rounded hover:bg-red-100 md:hover:bg-transparent hover:text-gray-900 `}`}>
           {item.text} </a>
           </li>
         ))}

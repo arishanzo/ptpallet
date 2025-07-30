@@ -25,23 +25,23 @@ const HeroSection = () => {
 
         
         <>
- <section class="relative bg-red-600  py-12  sm:py-16 lg:pt-20   lg:pb-36" id='home'>
+ <section class="relative bg-red-600  py-12  sm:py-16 lg:pt-20    lg:pb-36" id='home'>
   
             <animated.div style={{ ...styles }}   ref={ref}>
         <div class="mx-auto sm:px-6 md:py-12 py-4 lg:px-8 md:max-w-[1580px] ">
             <div class="grid grid-cols-1 gap-y-8  lg:grid-cols-2 sm:gap-y-20 xl:grid-cols-4">
                 <div class="text-center xl:col-span-2 lg:text-left lg:px-0 md:max-w-[600px]" >
-                    <div class="max-w-full mx-auto sm:max-w-md md:max-w-full">
+                    <div class="max-w-full p-8 mx-auto sm:max-w-md md:max-w-full">
                     
     <a href="/" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-100 border-red-100 border-2 border-dotted rounded-full " role="alert">
         <span className="text-sm text-center px-4 py-1.5 mr-3 font-medium">Produsen Pallet Kayu Berkualitas</span> 
               </a>
                <img class="block h-60 pl-8 md:pl-0 w-auto" src="./img/logo/logoiplpolos.png" alt="Logo" />
  
-     <h1 class="text-4xl  justify-start font-bold  leading-tight text-gray-100  pb-2 md:pb-8 sm:text-6xl lg:text-6xl lg:leading-tight font-pj">PT. Indonesia Pallet Logistik</h1>
+     <h1 class="text-5xl mb-4  justify-start font-bold  leading-tight text-gray-100  pb-2 md:pb-8 sm:text-6xl lg:text-6xl lg:leading-tight font-pj">PT. Indonesia Pallet Logistik</h1>
                  
  
-                        <h1 class="text-xl justify-start font-semibold  leading-tight text-red-100  pb-2 md:pb-8 sm:text-4xl lg:text-4xl lg:leading-tight font-pj">Trusted Business Partner for Reliable Logistics and Support</h1>
+                        <h1 class="text-xl justify-start font-semibold  leading-tight text-red-100  pb-2 md:pb-8 sm:text-4xl lg:text-4xl lg:leading-tight font-pj">The Best Solution Business Partner Support</h1>
                     <p className="mb-4 px-4 font-sans sm:p-0  text-red-200 py-3.5 md:max-w-[650px] md:mb-12 md:text-lg  lg:mb-5 lg:text-xl text-justify">
                      Kami membangun kepercayaan dengan menyediakan pallet kayu berkualitas, tahan lama, dan sesuai standar ekspor, serta menghadirkan solusi logistik yang tepat guna untuk mendukung efisiensi operasional dan kebutuhan pengemasan perusahaan Anda di berbagai sektor industri..         </p>
                       
@@ -49,7 +49,7 @@ const HeroSection = () => {
 
                     <div class=" sm:flex sm:items-center sm:justify-start lg:justify-start sm:space-x-5 lg:mt-12">
                         <a
-                            href="https://wa.me/081324221338"
+                            href="https://wa.me/081297343101"
                             title=""
                             class="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-900 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 font-pj justif-center hover:bg-blue-800"
                             role="button"

@@ -29,7 +29,7 @@ const Profil = () => {
 
         
           <animated.div style={{ ...styles }}   ref={ref}>
-      <section class="relative   lg:pt-20   overflow-y-hidden md:py-32" id='profil'>
+      <section class="relative   lg:pt-20   overflow-y-hidden " id='profil'>
         <div class="mx-auto sm:px-6 md:py-12 lg:px-8 md:max-w-[1580px] p-8">
 
             

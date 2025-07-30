@@ -1,17 +1,36 @@
 
-import { useState, useEffect} from "react"
 import { getDataWorkshop } from "../../../data/dataworkshop";
+
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from '@react-spring/web';
 
 const Workshop = () => {
   
   
+       const [ref, inView] = useInView({
+          triggerOnce: true, 
+          threshold: 0.1,    
+        });
+      
+        
+      
+      const styles = useSpring({
+        opacity: inView ? 1 : 0,
+          transform: inView ? 'translateY(0px)' : 'translateY(50px)', // ⬆️ Geser dari bawah
+          delay: inView ? 300 : 0,
+          config: { tension: 170, friction: 20 },
+      });
+
+
     const dataworkshop = getDataWorkshop();
 
   return (
 
 
     
-<section class="py-20 p-8 overflow-x-xhidden bg-red-600">
+    
+<animated.div style={{ ...styles }}   ref={ref}>
+<section class="py-20 p-8 overflow-x-xhidden bg-red-600" id="workshop">
   <div class="container px-4 mx-auto">
     <div class="md:max-w-[1580px] mx-auto">
       <div class="flex flex-wrap items-center -mx-5">
@@ -20,7 +39,7 @@ const Workshop = () => {
             <span class="text-lg font-bold text-white">Produsen Pallet Kayu Berkualitas</span>
             <h2 class="mt-12 mb-10 text-5xl font-extrabold  text-gray-200">Our Workshop</h2>
             <p class="mb-16 text-lg text-white">Lokasi Workshop kami teserbar di Daerah Indonesia diantaranya Jawa Barat, Jawa Timur, Jawa Tengah, Bali dan Lampung</p>
-            <a class="inline-block px-12 py-4 text-white font-bold bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg transition duration-200"  href="https://wa.me/081324221338">Hubungi Sekarang</a>
+            <a class="inline-block px-12 py-4 text-white font-bold bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg transition duration-200"  href="https://wa.me/081297343101">Hubungi Sekarang</a>
           </div>
         </div>
 
@@ -65,7 +84,7 @@ const Workshop = () => {
   </div>
 </section>
 
-   
+   </animated.div>
     
   );
 };

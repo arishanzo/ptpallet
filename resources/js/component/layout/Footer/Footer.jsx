@@ -115,8 +115,8 @@ const Footer = () => {
         <address class="not-italic text-gray-400">
           <p>Jl. Bantar Jati, Bantar Jati, Kec. Klapanunggal, Kabupaten Bogor, Jawa Barat 16710</p>
          
-          <p class="mt-2">Email: <a href="mailto:info@company.com" class="hover:text-white transition">company@indonesiapallet.com</a></p>
-          <p>Phone: <a href="tel:+11234567890" class="hover:text-white transition">+62 81324221338</a></p>
+          <p class="mt-2">Email: <a href="mailto:info@company.com" class="hover:text-white transition">company@indonesiapallet.co.id</a></p>
+          <p>Phone: <a href="tel:+11234567890" class="hover:text-white transition">+62 81297343101</a></p>
         </address>
       </div>
 
