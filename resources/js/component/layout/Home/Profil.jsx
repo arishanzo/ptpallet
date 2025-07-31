@@ -40,7 +40,7 @@ const Profil = () => {
   
   <img
     class="object-cover w-full h-auto transform  rounded-r-2xl"
-    src="https://lh3.googleusercontent.com/p/AF1QipP45XgIuVtAFMX8xN70MEqEBlG7JvsXNG8Gf0mX=s1360-w1360-h1020-rw"
+    src="./img/gallery/hero0.jpg"
     alt="Gambar 1"
   />
 

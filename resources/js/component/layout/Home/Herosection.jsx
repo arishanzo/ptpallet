@@ -78,7 +78,7 @@ const HeroSection = () => {
   <div class=" overflow-hidden rounded-xl text-center sshadow-lg">
     <img
       class="w-full h-64  object-cover transform hover:scale-105 transition duration-300"
-      src="https://lh3.googleusercontent.com/p/AF1QipP45XgIuVtAFMX8xN70MEqEBlG7JvsXNG8Gf0mX=s1360-w1360-h1020-rw"
+      src="./img/gallery/hero1.jpg"
       alt="Gambar 1"
     />
   </div>
@@ -86,7 +86,7 @@ const HeroSection = () => {
   <div class="overflow-hidden  rounded-xl shadow-lg">
     <img
       class="w-full h-64 object-cover transform hover:scale-105 transition duration-300 opacity-40"
-      src="https://lh3.googleusercontent.com/p/AF1QipMMwxSRN3yQ2LQgAVIHaA8eYlwssoBRyfcZhdnu=s1360-w1360-h1020-rw"
+      src="./img/gallery/hero2.jpg"
       alt="Gambar 2"
     />
   </div>
@@ -94,7 +94,7 @@ const HeroSection = () => {
   <div class="overflow-hidden rounded-xl shadow-lg opacity-40">
     <img
       class="w-full h-64 object-cover transform hover:scale-105 transition duration-300"
-      src="https://lh3.googleusercontent.com/p/AF1QipMe_vTw1n3bf7UvIEmE6nDVXuehfwuUP4AOma_d=s1360-w1360-h1020-rw"
+      src="./img/gallery/hero3.jpg"
       alt="Gambar 3"
     />
   </div>
@@ -102,7 +102,7 @@ const HeroSection = () => {
    <div class=" overflow-hidden rounded-xl shadow-lg">
     <img
       class="w-full h-64 object-cover transform hover:scale-105 transition duration-300"
-      src="https://lh3.googleusercontent.com/p/AF1QipMBF_889qlOL5ioS7NxQFqI9WpPAPcYQtmf0CPs=s1360-w1360-h1020-rw"
+      src="./img/gallery/hero4.jpg"
       alt="Gambar 1"
     />
   </div>
