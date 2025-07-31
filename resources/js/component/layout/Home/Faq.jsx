@@ -97,14 +97,11 @@ const Faq = () => {
                             <div class="p-10 bg-blue-700 rounded-3xl">
                                 <div class="flex flex-wrap -m-2">
                                     <div class="w-full md:w-1/2 p-2">
-                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">PALLET YANG TIDAK BISA DIREPAIR ? 
+                                        <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">Kemasan Product apa yang diletakkan di atas palet dalam bentuk apa? 
                                         </h3>
                                     </div>
                                     <div class="w-full md:w-1/2 p-2">
-                                        <p class="text-blue-200 font-medium">Pallet lapuk
-                                            , Pallet terkontaminasi bahan kimia
-                                            , Pallet hancur (75% komponen pallet rusak/hilang/patah)
-
+                                        <p class="text-blue-200 font-medium">Karung, drum besi, drum plastik, kotak kardus, wadah plastik, atau kemasan khusus.
                                         </p>
                                     </div>
                                 </div>
@@ -166,12 +163,11 @@ const Faq = () => {
                                 <div class="flex flex-wrap -m-2">
                                     <div class="w-full md:w-1/2 p-2">
                                         <h3 class="font-heading text-xl text-gray-200 font-inter font-bold">
-                                           
-Berapa ukuran palet yang Anda gunakan? Berapa beban maksimum per palet?
+                                          Ke kota dan negara mana pengirimannya?
                                         </h3>
                                     </div>
                                     <div class="w-full md:w-1/2 p-2">
-                                        <p class="text-blue-200 font-medium">Kami menggunakan pallet standar ukuran 1100 x 1100 mm atau sesuai permintaan khusus. Kapasitas beban maksimal per pallet adalah sekitar 1000 kg (tergantung jenis dan kondisi pallet serta distribusi beban).
+                                        <p class="text-blue-200 font-medium"> Di kirim dari Jl. Bantar Jati, Bantar Jati, Kec. Klapanunggal, Kabupaten Bogor, Jawa Barat 16710 Indonesia.
 
                                         </p>
                                     </div>
