@@ -63,11 +63,11 @@ function Main() {
     })(jQuery);
   
     return (
-      <div>
+      <div className="min-h-screen">
         <Router>
      <Nav />
      <Routeer />
- <Footer />
+     <Footer />
  </Router>
       </div>
     );

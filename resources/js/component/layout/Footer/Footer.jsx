@@ -9,8 +9,8 @@ const Footer = () => {
     return (
 
         <>
- <footer class="bg-gray-900 md:py-32 text-white pt-12 pb-8">
-  <div class="container mx-auto px-4">
+ <footer class="bg-gray-900 md:py-32 text-white  pt-12 pb-8">
+  <div class="container md:max-w-[80%] mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-10 lg:grid-cols-4 gap-8 mb-8">
       
       <div class="space-y-4  lg:col-span-5">

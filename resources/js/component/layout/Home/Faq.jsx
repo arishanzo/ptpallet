@@ -70,7 +70,7 @@ const Faq = () => {
       <section class="sm:py-10 bg-blue-900 overflow-hidden" id="faq">
         <div class="container mx-auto px-4">
             <div class="relative py-16 px-8 bg-yelloww overflow-hidden rounded-3xl">
-                <div class="relative z-10 md:max-w-7xl mx-auto">
+                <div class="relative z-10 md:max-w-[80%] mx-auto">
                     <div class="md:max-w-xl mb-10"><span class="inline-block mb-5 text-md text-mygray text-white font-bold uppercase tracking-widest">F.A.Q</span>
                         <h2 class="font-heading text-4xl    text-mygray text-4xl lg:text-5xl text-red-400 font-bold font-heading">
                             Frequently Asked Questions</h2>

@@ -66,9 +66,9 @@ const Workshop = () => {
     
     
 <animated.div style={{ ...styles }}   ref={ref}>
-<section class="py-20 p-8 overflow-x-xhidden bg-red-600" id="workshop">
+<section class="md:py-20 py-12 p-8 overflow-x-xhidden bg-red-600" id="workshop">
   <div class="container px-4 mx-auto">
-    <div class="md:max-w-[1580px] mx-auto">
+    <div class="md:max-w-[80%] mx-auto">
       <div class="flex flex-wrap items-center -mx-5">
         <div class="w-full lg:w-1/2 px-5 mb-20 lg:mb-8">
           <div class="max-w-md">
@@ -81,12 +81,12 @@ const Workshop = () => {
        
         </div>
 
-        <div class="w-full lg:w-1/2  py-12">
+        <div class="w-full lg:w-1/2 ">
         
                   <div class="grid grid-cols-2 top-0 sm:grid-cols-2 lg:grid-cols-3 gap-6">
  <div class="overflow-hidden rounded-xl shadow-lg ">
  <img
-      class="w-full h-full shadow-md object-cover transform hover:scale-105 transition duration-300"
+      class="w-full h-64 shadow-md object-cover transform hover:scale-105 transition duration-300"
       src="./img/gallery/workshop.jpg"
       alt="Gambar 1"
      
@@ -96,7 +96,15 @@ const Workshop = () => {
      <div class="overflow-hidden rounded-xl shadow-lg">
  <img
       class="w-full h-full shadow-md object-cover transform hover:scale-105 transition duration-300"
-      src="./img/gallery/picture1.jpg"
+      src="./img/gallery/Picture1.jpg"
+      alt="Gambar 1"
+     
+    />
+    </div>
+     <div class="overflow-hidden rounded-xl shadow-lg">
+ <img
+      class="w-full h-64 shadow-md object-cover transform hover:scale-105 transition duration-300"
+      src="./img/gallery/Picture6.jpg"
       alt="Gambar 1"
      
     />
@@ -104,15 +112,7 @@ const Workshop = () => {
      <div class="overflow-hidden rounded-xl shadow-lg">
  <img
       class="w-full h-full shadow-md object-cover transform hover:scale-105 transition duration-300"
-      src="./img/gallery/picture3.jpg"
-      alt="Gambar 1"
-     
-    />
-    </div>
-     <div class="overflow-hidden rounded-xl shadow-lg">
- <img
-      class="w-full h-full shadow-md object-cover transform hover:scale-105 transition duration-300"
-      src="./img/gallery/picture7.jpg"
+      src="./img/gallery/Picture3.jpg"
       alt="Gambar 1"
      
     />
@@ -137,15 +137,15 @@ const Workshop = () => {
         </div>
 
 
-   <div class=" py-12 max-w-full ">
+   <div class=" py-8 max-w-full ">
    
   
-<Slider {...settings} className="flex pt-4 pb-4">
+<Slider {...settings} className="flex pt-8 justify-center items-center">
          
         
       {dataworkshop.map(item => (   
    <div key={item.id} className="px-2"> {/* wrapper item */}
-      <div className="max-w-md p-8 bg-blue-900 rounded-lg shadow-lg">
+      <div className="max-w-md p-8 bg-blue-800 rounded-lg shadow-lg">
    
     <a href={item.link} target="_blank" rel="noopener noreferrer">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-100">{item.judul}</h5>

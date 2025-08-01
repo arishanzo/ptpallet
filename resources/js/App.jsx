@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Main from './Main';
-
+import '../css/app.css';
 
 
 document.querySelectorAll('[data-animate]').forEach((el) => {

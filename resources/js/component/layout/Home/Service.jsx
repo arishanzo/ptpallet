@@ -72,7 +72,7 @@ const Service = () => {
     
 <animated.div style={{ ...styles }}   ref={ref}>
    <div class="md:py-12 text-gray-800 bg-gray-100 dark:text-white md:py-32" id="services">
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto md:max-w-[80%] px-4 py-8">
    <div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 p-8 text-center">
         <h2 class="font-heading text-4xl font-bold text-gray-900 sm:text-3xl md:text-4xl">Our Services</h2>
         <p class="max-w-[95%] leading-normal text-gray-500 text-muted-foreground sm:text-lg sm:leading-7 md:text-center text-justify">Kami menyediakan layanan pembuatan pallet kayu dan pallet plastik dengan berbagai ukuran, model, dan spesifikasi sesuai kebutuhan Anda. Melayani pembuatan pallet custom, standar ekspor (ISPM 15), maupun lokal, baik dalam jumlah kecil maupun besar.</p>

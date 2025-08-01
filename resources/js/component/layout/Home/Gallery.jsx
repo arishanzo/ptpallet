@@ -84,7 +84,7 @@ const Gallery = () => {
 <div class="bg-white h-full py-6 md:py-32 sm:py-8 lg:py-12 pt-8  overflow-x-hidden" id='gallery'>
   
          <animated.div style={{ ...styles }}   ref={ref}>
-    <div class="mx-auto max-w-screen-2xl px-8 md:px-8"  >
+    <div class="mx-auto md:max-w-[80%] px-8 md:px-8"  >
         <div class="mb-4 flex items-center justify-between gap-8 ">
             <div class="flex items-center gap-12">
                 <h2 class="text-2xl font-bold text-gray-800 lg:text-3xl ">Our Gallery</h2>
@@ -136,7 +136,7 @@ const Gallery = () => {
 
 
 <div class="bg-white py-8">
-  <div class="mx-auto max-w-screen-2xl px-6 lg:px-8">
+  <div class="md:max-w-[80%] mx-auto px-6 lg:px-8">
     <nav class="flex border-t border-gray-200 pt-4 md:pt-5" aria-label="Pagination">
       <div class="flex flex-1 items-center">
         <button
@@ -167,7 +167,7 @@ const Gallery = () => {
 
        
           </div>
-      <div class="flex flex-1 items-center justify-end">
+      <div class="flex flex-1 items-center  justify-end">
         <button  
         onClick={nextPage}
          disabled={pageIndex === totalPages - 1}

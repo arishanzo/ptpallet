@@ -43,8 +43,8 @@ const Contact = () => {
 
 
 
-<section className="text-gray-600 body-font relative md:py-32" id="contact" >
-       <div className="mx-auto flex max-w-[58rem] md:py-24 py-8 flex-col items-center space-y-4 p-8 text-center" >
+<section className="text-gray-600 body-font relative md:max-w-[80%] mx-auto " id="contact" >
+       <div className=" flex md:py-24 py-8 flex-col items-center space-y-4 p-8 text-center" >
         <h2 className="font-heading text-4xl font-bold text-gray-900 sm:text-3xl md:text-4xl">Contact Us</h2>
           </div>
  

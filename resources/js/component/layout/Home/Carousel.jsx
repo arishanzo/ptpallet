@@ -106,22 +106,22 @@ const Carousel = () => {
     
 
     
-<div className="w-full px-4 md:mt-32 py-12  overflow-x-hidden" >
+<div className="w-full px-4 md:mt-8 py-12  overflow-x-hidden" >
     
     
             <animated.div style={{ ...styles }}   ref={ref}>
     <h2 className="text-xl md:text-4xl font-bold text-center text-gray-800">Our Client / Customer</h2>
   
   
-<Slider {...settings} className="absolute pt-12 ">
+<Slider {...settings} className="pt-12">
   
   {layananItems.map((item, index) => (
     <div key={index} className="flex justify-center items-center p-4">
       <a href="#" target="_blank" rel="noopener noreferrer">
         <img
           src={item.src}
-          alt="Logo"
-          className="h-10 md:h-24"
+          alt={`Client ${item.id}`}
+          className="h-10 md:h-24 mx-auto object-contain"
         />
       </a>
     </div>

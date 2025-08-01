@@ -78,8 +78,8 @@ const Nav = () => {
     <div
   className={`mx-auto px-4 py-2 md:py-10  sm:px-2  lg:px-8 transition-all duration-300 flex items-center ${
     scroll
-      ? 'md:max-w-[1650px] dark:text-white justify-between '
-      : 'bg-white text-black md:max-w-[1500px] dark:bg-dark-500 dark:text-white justify-between'
+      ? 'md:max-w-[85%] dark:text-white justify-between '
+      : 'bg-white text-black md:w-4/5 dark:bg-dark-500 dark:text-white justify-between'
   }`}
 >
 
